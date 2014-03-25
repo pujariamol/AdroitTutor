@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.params=
+comment0.target=void\ act()
+comment1.params=
+comment1.target=void\ displayScore()
+comment2.params=
+comment2.target=void\ displayLives()
+comment3.params=
+comment3.target=void\ displayRewards()
+numComments=4

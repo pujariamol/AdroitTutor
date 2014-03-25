@@ -1,0 +1,20 @@
+#BlueJ class context
+comment0.params=
+comment0.target=Player()
+comment1.params=
+comment1.target=int\ getScore()
+comment2.params=score
+comment2.target=void\ setScore(int)
+comment3.params=
+comment3.target=Player.Life\ getLife()
+comment4.params=
+comment4.target=int\ getLives()
+comment5.params=life
+comment5.target=void\ setLife(Player.Life)
+comment6.params=
+comment6.target=void\ decretementLife()
+comment7.params=reward
+comment7.target=void\ addReward(Reward)
+comment8.params=
+comment8.target=java.util.List\ getRewards()
+numComments=9

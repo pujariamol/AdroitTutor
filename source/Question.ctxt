@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.params=question\ answerOptions\ correctAnswerIndex
+comment0.target=Question(java.lang.String,\ java.util.List,\ int)
+comment1.params=
+comment1.target=java.lang.String\ getQuestion()
+comment2.params=question
+comment2.target=void\ setQuestion(java.lang.String)
+comment3.params=
+comment3.target=java.util.List\ getAnswerOptions()
+comment3.text=\r\n\ @return\ List\ of\ answer\ options\r\n
+comment4.params=answerOptions
+comment4.target=void\ setAnswerOptions(java.util.List)
+comment5.params=
+comment5.target=int\ getCorrectAnswerIndex()
+comment5.text=\r\n\ @return\ Index\ of\ correct\ answer\ in\ the\ list\r\n
+comment6.params=
+comment6.target=java.lang.String\ getCorrectAnswer()
+comment6.text=\r\n\ @return\ Correct\ answer\r\n
+numComments=7
