@@ -7,11 +7,6 @@ public class WordPickerMover extends Actor implements Pulley
         // Add your action code here.
     }
     
-    public void pickWord()
-    {
-        
-    }
-    
     public void move()
     {
         
