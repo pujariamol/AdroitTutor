@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.params=
-comment0.target=void\ act()
+comment0.target=WordPickerMover()
 comment1.params=
-comment1.target=void\ move()
+comment1.target=void\ act()
 numComments=2

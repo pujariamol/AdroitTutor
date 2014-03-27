@@ -2,14 +2,31 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 public class WordPicker extends Actor implements Pulley
 {
+    private static final int Y = 15;
+    private static final int MAX_TOP = 90;
+    private static final int MAX_BOTTOM = 500;
+    private MouseInfo mouse; 
+    
+    public WordPicker() {
+        setRotation(90);
+    }
+    
     public void act() 
     {
-        // Add your action code here.
+        if(Greenfoot.isKeyDown("down") && getY() < MAX_BOTTOM)
+        {
+             //System.out.println("Down Y --> " + getY());
+             move(Y);
+        }
+        else if(Greenfoot.isKeyDown("up") && getY() > MAX_TOP)
+        {
+             //System.out.println("UP Y --> " + getY());
+             move(-Y);
+        }
     }
     
     public void move()
     {
-        
     }
     
     public void pickWord()
