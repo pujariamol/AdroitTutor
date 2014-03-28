@@ -30,5 +30,9 @@ public class AdroitTutorWorld extends World
         addObject(wordpickermover, 530, 80);
         //wordpickermover.setLocation(513, 102);
 		addObject(wordPicker, 530, 100);
+		  //1st Screen        
+        UIHandler uihandler = new UIHandler();
+        addObject(uihandler, 471, 233);
+        uihandler.setLocation(450,285);
     }
 }
