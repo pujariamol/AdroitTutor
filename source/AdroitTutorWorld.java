@@ -27,8 +27,8 @@ public class AdroitTutorWorld extends World
      */
     private void prepare()
     {
-        addObject(wordpickermover, 545, 295);
-        wordpickermover.setLocation(513, 102);
+        addObject(wordpickermover, 530, 80);
+        //wordpickermover.setLocation(513, 102);
 		addObject(wordPicker, 530, 100);
     }
 }

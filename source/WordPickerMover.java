@@ -1,24 +1,18 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
-public class WordPickerMover extends Actor
+public class WordPickerMover extends Pulley
 {
-    int movementValue = 4;
     public WordPickerMover(){
         GreenfootImage image = getImage() ;
-        image.scale(90, 100 );
+        image.scale(250, 150 );
     }
 
     public void act() 
     {
-        if(Greenfoot.isKeyDown("down")){
-            System.out.println("down key pressed");
+        if(!Greenfoot.isKeyDown("down") && !WordPicker.isWordPickerDown()){ // && !Greenfoot.isKeyDown("up")
+            super.act();
         }else{
-            if(getX() > 900){
-                movementValue = -4;
-            }else if(getX() < 100) {
-                movementValue = 4;
-            }
-            move(movementValue);
+            //System.out.println("Key pressed stop");
         }
     }
 

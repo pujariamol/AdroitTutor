@@ -1,32 +1,47 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
-public class WordPicker extends Actor implements Pulley
+public class WordPicker extends Pulley
 {
-    private static final int Y = 15;
-    private static final int MAX_TOP = 90;
+    private static final int MAX_TOP = 100;
     private static final int MAX_BOTTOM = 500;
-    private MouseInfo mouse; 
-    
-    public WordPicker() {
-        setRotation(90);
-    }
+    private static final int MOVE_INTERVAL = 10;
+   
+    private int y = 100;
+    private static boolean wordPickerDown = false;
     
     public void act() 
     {
-        if(Greenfoot.isKeyDown("down") && getY() < MAX_BOTTOM)
+        if(Greenfoot.isKeyDown("down") && getY() < MAX_BOTTOM) // || Greenfoot.isKeyDown("up")
         {
-             //System.out.println("Down Y --> " + getY());
-             move(Y);
+            wordPickerDown = true;
+            y += MOVE_INTERVAL;
+            setLocation(getX(), y);
+            
+            /*else if(Greenfoot.isKeyDown("up") && getY() > MAX_TOP)
+            {
+                 //System.out.println("UP Y --> " + getY());
+                 y -= MOVE_INTERVAL;
+                 setLocation(getX(), y);
+            }*/
         }
-        else if(Greenfoot.isKeyDown("up") && getY() > MAX_TOP)
+        else if(wordPickerDown)
         {
-             //System.out.println("UP Y --> " + getY());
-             move(-Y);
+            while(getY() > MAX_TOP)
+            {
+                if(Greenfoot.isKeyDown("down"))
+                {
+                    break;
+                }
+                y -= MOVE_INTERVAL;
+                setLocation(getX(), y);
+                Greenfoot.delay(1);
+                wordPickerDown = false;
+            }
         }
-    }
-    
-    public void move()
-    {
+        else
+        {
+            super.act();
+        }
     }
     
     public void pickWord()
@@ -34,21 +49,8 @@ public class WordPicker extends Actor implements Pulley
         
     }
     
-    /*public void move(int x, int y)
+    public static boolean isWordPickerDown()
     {
-       int mouseX, mouseY, actorX, actorY ;
-       MouseInfo mouse = Greenfoot.getMouseInfo(); 
-       mouseX = mouse.getX();  
-       mouseY = mouse.getY();  
-       actorX = getX();
-       actorY = getY();
-       
-       for(int i = 0 ; i < 30 ; i++)
-       {
-           actorX = actorX + x;
-           actorY = actorY + y;
-           setLocation(actorX ,actorY);
-           Greenfoot.delay(1);
-       }
-    }*/
+        return wordPickerDown;
+    }
 }

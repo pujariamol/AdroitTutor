@@ -2,7 +2,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.awt.Font;
 import java.awt.Color;
 
-public class Text extends Actor implements Pulley
+public class Text extends Actor
 {
     private String wordText;
     
@@ -16,11 +16,6 @@ public class Text extends Actor implements Pulley
     public void act() 
     {
         // Add your action code here.
-    }
-    
-    public void move()
-    {
-        
     }
 
 	public String getWordText()
