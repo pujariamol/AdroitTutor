@@ -4,7 +4,14 @@ public class Question {
 	
 	private String question;
 	private List<String> answerOptions;
-	private final int correctAnswerIndex;
+	private int correctAnswerIndex;
+	
+	public Question()
+	{
+	    this.question="";
+	    this.answerOptions=null;
+	    this.correctAnswerIndex=0;
+	}
 	
 	public Question(String question, List<String> answerOptions, final int correctAnswerIndex) {
 		this.question = question;
@@ -13,11 +20,11 @@ public class Question {
 	}
 	
 	public String getQuestion() {
-		return question;
+	  	return question;
 	}
 	
 	public void setQuestion(String question) {
-		this.question = question;
+	  	this.question = question;
 	}
 	
 	/**
@@ -27,9 +34,12 @@ public class Question {
 		return answerOptions;
 	}
 	
-	
 	public void setAnswerOptions(List<String> answerOptions) {
 		this.answerOptions = answerOptions;
+	}
+	
+	public void setAnswerOption(String nextOption) {
+		this.answerOptions.add(nextOption);
 	}
 	
 	/**
@@ -39,6 +49,10 @@ public class Question {
 		return correctAnswerIndex;
 	}
 	
+	
+	public void setCorrectAnswerIndex(String ansIndex) {
+		this.correctAnswerIndex = Integer.parseInt(ansIndex);
+	}
 	/**
 	 * @return Correct answer
 	 */

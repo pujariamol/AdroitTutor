@@ -1,15 +1,15 @@
 import java.util.List;
 import java.util.ArrayList;
 
-public class Player  
+public class Player implements Subject  
 {
-   
-	/** Life must be either of these so using enum **/
+    /** Life must be either of these so using enum **/
 	public static enum Life{ZERO, ONE, TWO, THREE};
 
 	private int score;
 	private Life life;
 	private List<Reward> rewards;
+	private ArrayList<Observer> observers = new ArrayList<Observer>() ;
 	
 	public Player() {
 		setScore(0);
@@ -21,8 +21,9 @@ public class Player
 		return score;
 	}
 	
-	public void setScore(final int score) {
+	public void setScore(int score) {
 		this.score = score;
+		notifyObservers();
 	}
 	
 	public Life getLife() {
@@ -48,6 +49,7 @@ public class Player
 	
 	public void setLife(final Life life) {
 		this.life = life;
+		notifyObservers();
 	}
 	
 	public void decretementLife() {
@@ -77,5 +79,20 @@ public class Player
 	public List<Reward> getRewards() {
 	    return rewards;
 	}
+
+	public void attach(Observer obj) {
+        observers.add(obj) ;
+    }
+    
+    public void detach(Observer obj) {
+        observers.remove(obj) ;
+    }
+    
+    public void notifyObservers() {
+        for (Observer obj  : observers)
+        {
+            obj.update();
+        }
+    }
 
 }

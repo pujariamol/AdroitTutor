@@ -3,7 +3,7 @@ import java.util.List;
 
 public class QuestionSet
 {
-    private List<Question> questions;
+    protected List<Question> questions;
     
     public List<Question> getQuestions() {
         return questions;
