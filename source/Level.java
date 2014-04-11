@@ -9,19 +9,9 @@ public class Level
     
     public void setDifficulty(final Difficulty difficulty) {
         this.difficulty = difficulty;
-        switch(difficulty) {
-        case DIFFICULT:
-            questionSet = new DifficultQuestionSet();
-            break;
-            
-        case MEDIUM:
-            questionSet = new MediumQuestionSet();
-            break;
-            
-        case EASY:
-            questionSet = new EasyQuestionSet();
-            break;
-        }
+        QuestionSetFactory questionFactory = new QuestionSetFactory();
+        questionSet = questionFactory.createQuestionSet(difficulty);
+       
     }
     
     public Difficulty getDifficulty() {
