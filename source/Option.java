@@ -1,6 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.awt.Color;  
 import java.awt.Font;  
+import java.util.List;
 
 /**
  * Write a description of class Option here.
@@ -10,28 +11,36 @@ import java.awt.Font;
  */
 public class Option extends Actor
 {
-    //GreenfootImage img = new GreenfootImage(200,50);
-
-    /**
-     * Act - do whatever the Option wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+    private String optionText;
+    private OnOptionSelectedListener optionSelectedListener;
+    
     public Option(){
     }
 
     public Option(String optionText)
     {
-        int random1 = Greenfoot.getRandomNumber(255);
-        int random2 = Greenfoot.getRandomNumber(255);
-        int random3 = Greenfoot.getRandomNumber(255);
-        int random4 = Greenfoot.getRandomNumber(255);
-        GreenfootImage img = new GreenfootImage(optionText,48,Color.BLACK,new Color(0,0,0,0));
-        setImage(img);        
+        this.optionText = optionText;
+        GreenfootImage img = new GreenfootImage(optionText, 48, Color.BLACK, new Color(0,0,0,0));
+        setImage(img);
     }
     
     public void act() 
     {
-        
-    }    
+        if(Greenfoot.mouseClicked(this) && optionSelectedListener != null)
+        {
+            System.out.println(optionText + " clicked");
+            optionSelectedListener.onOptionSelected(this);
+        }
+    }
+    
+    public String getOptionText()
+    {
+        return optionText;
+    }
+    
+    public void setOptionSelectedListener(OnOptionSelectedListener optionSelectedListener)
+    {
+        this.optionSelectedListener = optionSelectedListener;
+    }
 
 }

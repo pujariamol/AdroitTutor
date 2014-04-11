@@ -4,49 +4,18 @@ import java.awt.Font;
 
 import java.util.List;
 
-/**
- * Write a description of class UIHandler here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
+
 public class UIHandler extends Actor
 {
-    // instance variables - replace the example below with your own
-    private int flag;
-    /**
-     * Constructor for objects of class UIHandler
-     */
+    
     public UIHandler()
-    {
-        // initScreen();
-        // selectDifficultyScreen();
+    {        
     }
 
-    private void initScreen(){
-        GreenfootImage img = new GreenfootImage("WelcomeScreen.png");
-        setImage(img);
-        img.scale(900,570);
-        Greenfoot.delay(200);
-    }
     
-    private void selectDifficultyScreen(){
-        GreenfootImage img = new GreenfootImage("bathroom-tile.jpg");
-        setImage(img);
-        img.scale(900,570);
-       
-        for(int i=0;i < level.getDifficulty().values().length;i++)
-        {
-            System.out.println(Level.Difficulty.values()[i]);
-            Option option = new Option(Level.Difficulty.values()[i].toString());
-            getWorld().addObject(option,200,100+(i*200));
-           
-        }
-    }
-    
-    private void showOptions(){
+    public void showOptions(){
         
-  /*      if(flag==1)
+        /*      if(flag==1)
         {
             
             //Greenfoot.delay(300);
@@ -63,13 +32,13 @@ public class UIHandler extends Actor
            */
             Question question = new Question();     // this should be provided by daemon Class.
             List<String> answerOptions = question.getAnswerOptions();
-            flag=0;
+            //flag=0;
             
             for(int i=0; i < answerOptions.size();i++)
             {
-                Option option = new Option(answerOptions.get(i));
-                getWorld().addObject(option,100+(i*200),450);
-                option.turn(i*100);                
+                Option option1 = new Option(answerOptions.get(i));
+                getWorld().addObject(option1,100+(i*200),450);
+                option1.turn(i*100);                
             }
             
             
@@ -106,7 +75,7 @@ public class UIHandler extends Actor
     
     public void act()
     {
-        showOptions();
+        
     }
     
 }
