@@ -1,13 +1,17 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import java.util.ArrayList;
 
-public class WordPicker extends Pulley
+public class WordPicker extends Pulley implements Subject
 {
     private static final int MAX_TOP = 100;
     private static final int MAX_BOTTOM = 500;
     private static final int MOVE_INTERVAL = 10;
-   
+    
     private int y = 100;
     private static boolean wordPickerDown = false;
+    
+    // Added by Mahesh
+    private ArrayList<Observer> observers = new ArrayList<Observer>();
     
     public void act() 
     {
@@ -42,6 +46,11 @@ public class WordPicker extends Pulley
         {
             super.act();
         }
+        
+        /*
+           1.Check for WordPicker is in hasWord state and reached particular height Y
+           2.If condition 1 satisfied then notifyObservers
+        */
     }
     
     public void pickWord()
@@ -52,5 +61,24 @@ public class WordPicker extends Pulley
     public static boolean isWordPickerDown()
     {
         return wordPickerDown;
+    }
+    
+    // Added by Mahesh
+    public void attach(Observer obj) 
+    {
+        observers.add(obj) ;
+    }
+
+    public void detach(Observer obj) 
+    {
+        observers.remove(obj) ;
+    }
+
+    public void notifyObservers() 
+    {
+        for (Observer obj  : observers)
+        {
+            obj.update();
+        }
     }
 }

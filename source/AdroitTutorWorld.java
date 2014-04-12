@@ -6,7 +6,7 @@ import java.util.List;
  * 
  * @version (a version number or a date)
  */
-public class AdroitTutorWorld extends World implements OnOptionSelectedListener
+public class AdroitTutorWorld extends World implements OnOptionSelectedListener,Observer
 {
     static Player player=null;
     WordPicker wordPicker = new WordPicker();
@@ -83,5 +83,11 @@ public class AdroitTutorWorld extends World implements OnOptionSelectedListener
     public static Player getPlayer()
     {
         return player;
+    }
+    
+    public void update()
+    {
+        System.out.println("In update call of AdroitTutorWorld Observer..");
+        // remove user selected word from Worl 
     }
 }
