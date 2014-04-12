@@ -8,6 +8,7 @@ import java.util.List;
  */
 public class AdroitTutorWorld extends World implements OnOptionSelectedListener
 {
+    static Player player=null;
     WordPicker wordPicker = new WordPicker();
     WordPickerMover wordpickermover = new WordPickerMover();
     private static final int WELCOME_SCREEN_TIMEOUT = 2000;
@@ -31,6 +32,10 @@ public class AdroitTutorWorld extends World implements OnOptionSelectedListener
     {
         final WelcomeScreen screen1 = new WelcomeScreen();
         addObject(screen1, 484, 318);
+        
+        player=new Player();
+        ScoreBoard scoreBoard = new ScoreBoard();
+        addObject(scoreBoard, 900, 500);
         
         final UIHandler uihandler = new UIHandler();
         new Thread(new Runnable() 
@@ -75,4 +80,8 @@ public class AdroitTutorWorld extends World implements OnOptionSelectedListener
         addObject(wordPicker, 530, 100);
     }
 
+    public static Player getPlayer()
+    {
+        return player;
+    }
 }

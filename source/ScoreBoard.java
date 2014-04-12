@@ -10,7 +10,7 @@ public class ScoreBoard extends Actor implements Observer
     public ScoreBoard()
     {
         background= getImage();
-        //player = AdroitTutorWorld.getPlayer();
+        player = AdroitTutorWorld.getPlayer();
         displayScore();
     }
     
