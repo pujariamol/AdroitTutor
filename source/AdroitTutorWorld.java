@@ -31,11 +31,30 @@ public class AdroitTutorWorld extends World implements OnOptionSelectedListener,
     private void prepare()
     {
         final WelcomeScreen screen1 = new WelcomeScreen();
+        
+        final IScreenHandler levelScreen = new LevelScreen(this);
+        final IScreenHandler gamePlayScreen = new GamePlayScreen(this);
+        final IScreenHandler rewardScreen = new RewardScreen(this);
+        final IScreenHandler gameOverScreen = new GameOverScreen(this);
+        
+        levelScreen.setNextScreen(gamePlayScreen);
+        gamePlayScreen.setNextScreen(rewardScreen);
+        rewardScreen.setNextScreen(gameOverScreen);
+        
+        //---------For Reference Start--------
+        //levelScreen.showScreen(ScreenType.GAMEPLAY);
+        //levelScreen.showScreen(ScreenType.GAMEOVER);
+        //levelScreen.showScreen(ScreenType.LEVEL);
+        //levelScreen.showScreen(ScreenType.REWARD);
+        //---------For Reference ends--------
+        
         addObject(screen1, 484, 318);
         
         player=new Player();
         ScoreBoard scoreBoard = new ScoreBoard();
         addObject(scoreBoard, 900, 500);
+        
+        
         
         final UIHandler uihandler = new UIHandler();
         new Thread(new Runnable() 
@@ -52,39 +71,13 @@ public class AdroitTutorWorld extends World implements OnOptionSelectedListener,
                 {}
                 finally{
                     removeObject(screen1);
-                    showLevels();
+                    levelScreen.showScreen(ScreenType.LEVEL);       
                 }
-                
             }
         }).start();
         
-        IScreenHandler levelScreen = new LevelScreen(this);
-        IScreenHandler gamePlayScreen = new GamePlayScreen(this);
-        IScreenHandler rewardScreen = new RewardScreen(this);
-        IScreenHandler gameOverScreen = new GameOverScreen(this);
-        
-        levelScreen.setNextScreen(gamePlayScreen);
-        gamePlayScreen.setNextScreen(rewardScreen);
-        rewardScreen.setNextScreen(gameOverScreen);
+    }
        
-        //---------For Reference Start--------
-        //levelScreen.showScreen(ScreenType.GAMEPLAY);
-        //levelScreen.showScreen(ScreenType.GAMEOVER);
-        //levelScreen.showScreen(ScreenType.LEVEL);
-        //levelScreen.showScreen(ScreenType.REWARD);
-        //---------For Reference ends--------        
-    }
-    
-    private void showLevels()
-    {
-        for(int i=0;i < Level.Difficulty.values().length;i++)
-        {
-            Option option = new Option(Level.Difficulty.values()[i].toString());
-            addObject(option, 500, 100 + (i * 200));
-            option.setOptionSelectedListener(this);
-        }
-    }
-    
     public void onOptionSelected(Option option)
     {
         System.out.println("Inside world option selected --> " + option.getOptionText());
@@ -109,18 +102,26 @@ public class AdroitTutorWorld extends World implements OnOptionSelectedListener,
     
     public void showGamePlayScreen(){
         System.out.println("Game Play Screen");
+        
     }
     
     public void showGameOverScreen(){
-        System.out.println("Game Over Screen");        
+        System.out.println("Game Over Screen");
     }
     
     public void showLevelScreen(){
-        System.out.println("Level Screen");
+//        System.out.println("Level Screen");
+        for(int i=0;i < Level.Difficulty.values().length;i++)
+        {
+            Option option = new Option(Level.Difficulty.values()[i].toString());
+            addObject(option, 500, 100 + (i * 200));
+            option.setOptionSelectedListener(this);
+        }
     }
     
     public void showRewardScreen(){
         System.out.println("Reward Screen");
+       
     }
     
 }
