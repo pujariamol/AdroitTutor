@@ -28,7 +28,7 @@ public class Option extends Actor
     {
         if(Greenfoot.mouseClicked(this) && optionSelectedListener != null)
         {
-            System.out.println(optionText + " clicked");
+            //System.out.println(optionText + " clicked");
             optionSelectedListener.onOptionSelected(this);
         }
     }

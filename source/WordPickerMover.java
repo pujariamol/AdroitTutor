@@ -1,4 +1,4 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import greenfoot.*;
 
 public class WordPickerMover extends Pulley
 {
@@ -9,11 +9,8 @@ public class WordPickerMover extends Pulley
 
     public void act() 
     {
-        if(!Greenfoot.isKeyDown("down") && !WordPicker.isWordPickerDown()){ // && !Greenfoot.isKeyDown("up")
+        if(!Greenfoot.isKeyDown("down")){
             super.act();
-        }else{
-            //System.out.println("Key pressed stop");
         }
     }
-
 }

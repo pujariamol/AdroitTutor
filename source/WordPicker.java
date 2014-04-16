@@ -7,40 +7,32 @@ public class WordPicker extends Pulley implements Subject
     private static final int MAX_BOTTOM = 500;
     private static final int MOVE_INTERVAL = 10;
     
-    private int y = 100;
+    public int y = 100;
     private static boolean wordPickerDown = false;
+    
+    private WordPickerState wordPickerState;
+    private WordPickerState wordPickerMovingUpState;
+    private WordPickerState wordPickerMovingDownState;
+    private WordPickerState wordPickerIntersectingWordState;
+    
+    private Option selectedAnswerOption;
     
     // Added by Mahesh
     private ArrayList<Observer> observers = new ArrayList<Observer>();
     
+    public WordPicker()
+    {
+        wordPickerMovingUpState = new MovingUpState(this);
+        wordPickerMovingDownState = new MovingDownState(this);
+        wordPickerIntersectingWordState = new IntersectingWordState(this);
+        wordPickerState = wordPickerMovingDownState;
+    }
+    
     public void act() 
     {
-        if(Greenfoot.isKeyDown("down") && getY() < MAX_BOTTOM) // || Greenfoot.isKeyDown("up")
+        if(Greenfoot.isKeyDown("down"))
         {
-            wordPickerDown = true;
-            y += MOVE_INTERVAL;
-            setLocation(getX(), y);
-            
-            /*else if(Greenfoot.isKeyDown("up") && getY() > MAX_TOP)
-            {
-                 //System.out.println("UP Y --> " + getY());
-                 y -= MOVE_INTERVAL;
-                 setLocation(getX(), y);
-            }*/
-        }
-        else if(wordPickerDown)
-        {
-            while(getY() > MAX_TOP)
-            {
-                if(Greenfoot.isKeyDown("down"))
-                {
-                    break;
-                }
-                y -= MOVE_INTERVAL;
-                setLocation(getX(), y);
-                Greenfoot.delay(1);
-                wordPickerDown = false;
-            }
+            wordPickerState.moveDown();
         }
         else
         {
@@ -53,14 +45,57 @@ public class WordPicker extends Pulley implements Subject
         */
     }
     
-    public void pickWord()
+    public void setWordPickerState(WordPickerState newWordPickerState)
     {
-        
+        wordPickerState = newWordPickerState;
     }
     
-    public static boolean isWordPickerDown()
+    public WordPickerState getWordPickerMovingDownState()
     {
-        return wordPickerDown;
+        return wordPickerMovingDownState;
+    }
+    
+    public WordPickerState getWordPickerMovingUpState()
+    {
+        return wordPickerMovingUpState;
+    }
+    
+    public WordPickerState getWordPickerIntersectingWordState()
+    {
+        return wordPickerIntersectingWordState;
+    }
+    
+    public void moveUp(Option word)
+    {
+        wordPickerState.moveUp(word);
+    }
+    
+    public void moveDown()
+    {
+        wordPickerState.moveDown();
+    }
+    
+    public void isIntersectingWord()
+    {
+        wordPickerState.isIntersectingWord();
+    }
+    
+    public Actor getIntersectingWord()
+    {
+        return getOneIntersectingObject(Option.class);
+    }
+    
+    public void setPickedAnswerOption(Option answerOption)
+    {
+        selectedAnswerOption = answerOption;
+        getWorld().removeObject(selectedAnswerOption);
+        System.out.println("Picked word --> " + selectedAnswerOption.getOptionText());
+        notifyObservers();
+    }
+    
+    public Option getPickedWord()
+    {
+        return selectedAnswerOption;
     }
     
     // Added by Mahesh
@@ -80,5 +115,15 @@ public class WordPicker extends Pulley implements Subject
         {
             obj.update();
         }
+    }
+    
+    public int getYAxis()
+    {
+        return y;
+    }
+    
+    public void setYAxis(int y)
+    {
+        this.y = y;
     }
 }

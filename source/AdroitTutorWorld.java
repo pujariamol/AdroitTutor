@@ -51,11 +51,7 @@ public class AdroitTutorWorld extends World implements OnOptionSelectedListener,
         addObject(screen1, 484, 318);
         
         player=new Player();
-        ScoreBoard scoreBoard = new ScoreBoard();
-        addObject(scoreBoard, 900, 500);
-        
-        
-        
+
         final UIHandler uihandler = new UIHandler();
         new Thread(new Runnable() 
         {
@@ -80,13 +76,21 @@ public class AdroitTutorWorld extends World implements OnOptionSelectedListener,
        
     public void onOptionSelected(Option option)
     {
-        System.out.println("Inside world option selected --> " + option.getOptionText());
+        //System.out.println("Inside world option selected --> " + option.getOptionText());
         List<Option> optionList = getObjects(Option.class);
         removeObjects(optionList);
         
-        addObject(wordpickermover, 530, 80);
-        //wordpickermover.setLocation(513, 102);
+        //addObject(wordpickermover, 530, 80);
         addObject(wordPicker, 530, 100);
+        ScoreBoard scoreBoard = new ScoreBoard();
+        addObject(scoreBoard, 980, 500);
+        
+        for(int i=0; i < 4; i++)
+        {
+            Option answerOption = new Option("" + (i + 1));
+            addObject(answerOption, 100 + (i * 200), 500);
+            option.turn(i * 100);
+        }
     }
 
     public static Player getPlayer()
@@ -100,7 +104,8 @@ public class AdroitTutorWorld extends World implements OnOptionSelectedListener,
         // remove user selected word from Worl 
     }
     
-    public void showGamePlayScreen(){
+    public void showGamePlayScreen()
+    {
         System.out.println("Game Play Screen");
         
     }
@@ -109,8 +114,8 @@ public class AdroitTutorWorld extends World implements OnOptionSelectedListener,
         System.out.println("Game Over Screen");
     }
     
-    public void showLevelScreen(){
-//        System.out.println("Level Screen");
+    public void showLevelScreen()
+    {
         for(int i=0;i < Level.Difficulty.values().length;i++)
         {
             Option option = new Option(Level.Difficulty.values()[i].toString());
@@ -119,7 +124,8 @@ public class AdroitTutorWorld extends World implements OnOptionSelectedListener,
         }
     }
     
-    public void showRewardScreen(){
+    public void showRewardScreen()
+    {
         System.out.println("Reward Screen");
        
     }

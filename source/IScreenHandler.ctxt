@@ -1,0 +1,6 @@
+#BlueJ class context
+comment0.params=screenType
+comment0.target=void\ showScreen(ScreenType)
+comment1.params=nextScreen
+comment1.target=void\ setNextScreen(IScreenHandler)
+numComments=2

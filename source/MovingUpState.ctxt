@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.params=wordPicker
+comment0.target=MovingUpState(WordPicker)
+comment1.params=word
+comment1.target=void\ moveUp(Option)
+comment2.params=
+comment2.target=void\ moveDown()
+comment3.params=
+comment3.target=void\ isIntersectingWord()
+numComments=4

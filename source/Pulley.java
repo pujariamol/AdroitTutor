@@ -2,18 +2,18 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 public class Pulley extends Actor
 {
-    private static final int MAX_X = 900;
-    private static final int MIN_X = 100;
+    private static final int MAX_RIGHT = 900;
+    private static final int MAX_LEFT = 100;
     private static final int DISTANCE = 4;
     private int distance = DISTANCE;
     
     public void act() 
     {
-        if(getX() > MAX_X){
+        if(getX() > MAX_RIGHT){
             distance = -DISTANCE;
-        }else if(getX() < MIN_X) {
+        }else if(getX() < MAX_LEFT) {
             distance = DISTANCE;
         }
         move(distance);
-    }    
+    }
 }
