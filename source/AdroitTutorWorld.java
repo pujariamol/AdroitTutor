@@ -57,6 +57,22 @@ public class AdroitTutorWorld extends World implements OnOptionSelectedListener,
                 
             }
         }).start();
+        
+        IScreenHandler levelScreen = new LevelScreen(this);
+        IScreenHandler gamePlayScreen = new GamePlayScreen(this);
+        IScreenHandler rewardScreen = new RewardScreen(this);
+        IScreenHandler gameOverScreen = new GameOverScreen(this);
+        
+        levelScreen.setNextScreen(gamePlayScreen);
+        gamePlayScreen.setNextScreen(rewardScreen);
+        rewardScreen.setNextScreen(gameOverScreen);
+       
+        //---------For Reference Start--------
+        //levelScreen.showScreen(ScreenType.GAMEPLAY);
+        //levelScreen.showScreen(ScreenType.GAMEOVER);
+        //levelScreen.showScreen(ScreenType.LEVEL);
+        //levelScreen.showScreen(ScreenType.REWARD);
+        //---------For Reference ends--------        
     }
     
     private void showLevels()
@@ -90,4 +106,21 @@ public class AdroitTutorWorld extends World implements OnOptionSelectedListener,
         System.out.println("In update call of AdroitTutorWorld Observer..");
         // remove user selected word from Worl 
     }
+    
+    public void showGamePlayScreen(){
+        System.out.println("Game Play Screen");
+    }
+    
+    public void showGameOverScreen(){
+        System.out.println("Game Over Screen");        
+    }
+    
+    public void showLevelScreen(){
+        System.out.println("Level Screen");
+    }
+    
+    public void showRewardScreen(){
+        System.out.println("Reward Screen");
+    }
+    
 }
