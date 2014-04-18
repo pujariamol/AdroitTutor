@@ -20,7 +20,6 @@ public class AdroitTutorWorld extends World implements OnOptionSelectedListener,
     {    
         // Create a new world with 600x400  cells with a cell size of 1x1 pixels.
         super(1100, 600, 1);
-        
         prepare();
     }
     
@@ -85,10 +84,13 @@ public class AdroitTutorWorld extends World implements OnOptionSelectedListener,
         ScoreBoard scoreBoard = new ScoreBoard();
         addObject(scoreBoard, 980, 500);
         
+        GreenfootImage greenfootImage = new GreenfootImage("./images/game_screen_bg.png");
+        setBackground(greenfootImage);
+        
         for(int i=0; i < 4; i++)
         {
             Option answerOption = new Option("" + (i + 1));
-            addObject(answerOption, 100 + (i * 200), 500);
+            addObject(answerOption, 100 + (i * 200), 550);
             option.turn(i * 100);
         }
     }
