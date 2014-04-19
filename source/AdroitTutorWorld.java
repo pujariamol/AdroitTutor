@@ -11,6 +11,7 @@ public class AdroitTutorWorld extends World implements OnOptionSelectedListener,
     static Player player=null;
     WordPicker wordPicker = new WordPicker();
     WordPickerMover wordpickermover = new WordPickerMover();
+    GameEngine gameEngine = new GameEngine(wordPicker);
     private static final int WELCOME_SCREEN_TIMEOUT = 2000;
 
     /**
@@ -71,6 +72,9 @@ public class AdroitTutorWorld extends World implements OnOptionSelectedListener,
             }
         }).start();
         
+        
+        // attaching observers
+        attachObserversToWordPicker();
     }
        
     public void onOptionSelected(Option option)
@@ -103,7 +107,9 @@ public class AdroitTutorWorld extends World implements OnOptionSelectedListener,
     public void update()
     {
         System.out.println("In update call of AdroitTutorWorld Observer..");
-        // remove user selected word from Worl 
+        // remove user selected word from World
+        this.removeObject(wordPicker.getPickedWord());
+        System.out.println("Picked word removed from world");
     }
     
     public void showGamePlayScreen()
@@ -132,4 +138,10 @@ public class AdroitTutorWorld extends World implements OnOptionSelectedListener,
        
     }
     
+    
+    public void attachObserversToWordPicker()
+    {
+        wordPicker.attach(gameEngine);
+        wordPicker.attach(this);
+    }
 }

@@ -88,8 +88,9 @@ public class WordPicker extends Pulley implements Subject
     public void setPickedAnswerOption(Option answerOption)
     {
         selectedAnswerOption = answerOption;
-        getWorld().removeObject(selectedAnswerOption);
-        System.out.println("Picked word --> " + selectedAnswerOption.getOptionText());
+        //getWorld().removeObject(selectedAnswerOption);
+        //System.out.println("Picked word --> " + selectedAnswerOption.getOptionText());
+        System.out.println("Updating obserevers....");
         notifyObservers();
     }
     
@@ -97,7 +98,7 @@ public class WordPicker extends Pulley implements Subject
     {
         return selectedAnswerOption;
     }
-    
+
     // Added by Mahesh
     public void attach(Observer obj) 
     {
