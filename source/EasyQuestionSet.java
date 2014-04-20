@@ -7,7 +7,7 @@ public class EasyQuestionSet extends QuestionSet
     public EasyQuestionSet()
     {
         questions=new ArrayList<Question>();
-        
+        QuestionSet qs=new EasyQuestionSet();
         //System.out.println("In EasyQuestionSet Constructor\n");
         try
         {
@@ -28,7 +28,7 @@ public class EasyQuestionSet extends QuestionSet
     {
         try
         {
-            BufferedReader reader = new BufferedReader(new FileReader("./questionset/EasySet.txt"));
+            BufferedReader reader = new BufferedReader(new FileReader("c:/Users/prasad/Desktop/courses/CMPE202/CMPE202/source/questionset/EasySet.txt"));
             String line = null,QueStr[];
             int i=0;
             java.util.List<String> answerOptionsList = new java.util.ArrayList<String>();

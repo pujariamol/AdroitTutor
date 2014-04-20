@@ -1,10 +1,7 @@
 #BlueJ class context
-comment0.params=difficulty
-comment0.target=void\ setDifficulty(Level.Difficulty)
+comment0.params=
+comment0.target=Level()
 comment1.params=
-comment1.target=Level.Difficulty\ getDifficulty()
-comment2.params=
-comment2.target=int\ getDifficultyLevel()
-comment3.params=
-comment3.target=QuestionSet\ getQuestionSet()
-numComments=4
+comment1.target=QuestionSet\ getQuestionSet()
+comment1.text=public\ Level(final\ String\ difficultyText)\r\n\ \ \ \ \ {\r\n\ \ \ \ \ \ \ \ \ if(difficultyText.equalsIgnoreCase(Difficulty.EASY.toString()))\r\n\ \ \ \ \ \ \ \ \ {\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ questionSet\ \=\ new\ EasyQuestionSet();\r\n\ \ \ \ \ \ \ \ \ }\r\n\ \ \ \ \ \ \ \ \ else\ if(difficultyText.equalsIgnoreCase(Difficulty.MEDIUM.toString()))\r\n\ \ \ \ \ \ \ \ \ {\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ questionSet\ \=\ new\ MediumQuestionSet();\r\n\ \ \ \ \ \ \ \ \ }\r\n\ \ \ \ \ \ \ \ \ else\r\n\ \ \ \ \ \ \ \ \ {\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ questionSet\ \=\ new\ DifficultQuestionSet();\r\n\ \ \ \ \ \ \ \ \ }\r\n\ \ \ \ \ }\r\n\ \ \ \ \r\n\r\n\ \ \ \ \ public\ Level(final\ Difficulty\ difficulty)\r\n\ \ \ \ {\r\n\r\n\ \ \ \ \ \ \ \ this.difficulty\ \=\ difficulty;\r\n\ \ \ \ \ \ \ \ QuestionSetFactory\ questionFactory\ \=\ new\ QuestionSetFactory();\r\n\ \ \ \ \ \ \ \ questionSet\ \=\ questionFactory.createQuestionSet(difficulty);\r\n\ \ \ \ }\r\n\ \ \ \ \r\n\ \ \ \ public\ void\ setDifficulty(final\ Difficulty\ difficulty)\ {\r\n\ \ \ \ \ \ \ \ this.difficulty\ \=\ difficulty;\r\n\ \ \ \ \ \ \ \ QuestionSetFactory\ questionFactory\ \=\ new\ QuestionSetFactory();\r\n\ \ \ \ \ \ \ \ questionSet\ \=\ questionFactory.createQuestionSet(difficulty);\r\n\ \ \ \ \ \ \ \r\n\ \ \ \ }\ \r\n\ \ \ \ \r\n\ \ \ \ public\ Difficulty\ getDifficulty()\ {\r\n\ \ \ \ \ \ \ \ return\ difficulty;\r\n\ \ \ \ }\r\n\ \ \ \ \r\n\ \ \ \ public\ int\ getDifficultyLevel()\ {\r\n\ \ \ \ \ \ \ \ switch(difficulty)\ {\r\n\ \ \ \ \ \ \ \ case\ DIFFICULT\:\r\n\ \ \ \ \ \ \ \ \ \ \ \ return\ 3;\r\n\ \ \ \ \ \ \ \ \ \ \ \ \r\n\ \ \ \ \ \ \ \ case\ MEDIUM\:\r\n\ \ \ \ \ \ \ \ \ \ \ \ return\ 2;\r\n\ \ \ \ \ \ \ \ \ \ \ \ \r\n\ \ \ \ \ \ \ \ case\ EASY\:\r\n\ \ \ \ \ \ \ \ \ \ \ \ return\ 1;\r\n\ \ \ \ \ \ \ \ }\r\n\ \ \ \ \ \ \ \ return\ 1;\r\n}
+numComments=2

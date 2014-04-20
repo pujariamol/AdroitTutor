@@ -5,4 +5,6 @@ comment1.params=screenType
 comment1.target=void\ showScreen(ScreenType)
 comment2.params=nextScreen
 comment2.target=void\ setNextScreen(IScreenHandler)
-numComments=3
+comment3.params=
+comment3.target=void\ showLevelScreen()
+numComments=4

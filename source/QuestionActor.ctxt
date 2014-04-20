@@ -1,0 +1,6 @@
+#BlueJ class context
+comment0.params=question
+comment0.target=QuestionActor(Question)
+comment1.params=question
+comment1.target=void\ displayQuestion(Question)
+numComments=2

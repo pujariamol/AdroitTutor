@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.params=qs
+comment0.target=QuestionSetIterator(QuestionSet)
+comment1.params=
+comment1.target=Question\ currentQuestion()
+comment2.params=
+comment2.target=Question\ getNextQuestion()
+comment3.params=
+comment3.target=boolean\ isDone()
+numComments=4

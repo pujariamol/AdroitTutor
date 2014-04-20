@@ -6,8 +6,8 @@ public class AdroitTutorWorld extends World implements OnOptionSelectedListener,
     static Player player = new Player();
     WordPicker wordPicker = new WordPicker();
     WordPickerMover wordpickermover = new WordPickerMover();
-    Level currentLevel = new Level(Level.Difficulty.EASY);
-    GameEngine gameEngine = new GameEngine(this);
+    Level currentLevel = null;//new Level(Level.Difficulty.EASY);
+    GameEngine gameEngine = null;
     
     private static final int WELCOME_SCREEN_TIMEOUT = 2000;
 
@@ -79,12 +79,26 @@ public class AdroitTutorWorld extends World implements OnOptionSelectedListener,
        
     public void onOptionSelected(Option option)
     {
-        //System.out.println("Inside world option selected --> " + option.getOptionText());
+        System.out.println("Inside world option selected --> " + option.getOptionText());
         List<Option> optionList = getObjects(Option.class);
         removeObjects(optionList);
         
         levelScreen.showScreen(ScreenType.GAMEPLAY);
-        
+        //currentLevel = new Level(option.getOptionText());
+        String difficulty = option.getOptionText();
+        if(difficulty.equalsIgnoreCase("Easy"))
+        {
+             currentLevel = new EasyLevel();
+        }
+        else if(difficulty.equalsIgnoreCase("Medium"))
+        {
+              currentLevel = new MediumLevel();
+        }
+        else
+        {
+             currentLevel = new DifficultLevel();
+        }
+        gameEngine = new GameEngine(this);
         
  /*       
         //addObject(wordpickermover, 530, 80);
