@@ -1,10 +1,18 @@
 public class GameEngine implements Observer
 {
     protected WordPicker wordPicker;
+    protected Level level;
+    protected Player player;
+    protected AdroitTutorWorld adroitTutorWorld;
+    protected QuestionSetIterator questionSetIterator;
     
-    public GameEngine(WordPicker wp)
+    public GameEngine(AdroitTutorWorld atw)
     {
-        this.wordPicker=wp;
+        this.adroitTutorWorld = atw;
+        wordPicker = atw.getWordPicker();
+        level = atw.getCurrentLevel();
+        questionSetIterator = new QuestionSetIterator(this.level.getQuestionSet());
+        player = AdroitTutorWorld.getPlayer();
     }
     
     public void update()
@@ -17,8 +25,41 @@ public class GameEngine implements Observer
         evaluateAnswer(selectedAnswerOption);
     }
     
-    public boolean evaluateAnswer(String selectedAnswerOption)
+    public void evaluateAnswer(String selectedAnswerOption)
     {
-        return true;
+        boolean answer = questionSetIterator.currentQuestion().getCorrectAnswer().equalsIgnoreCase(selectedAnswerOption);
+        System.out.println("Answer is ::"+answer);
+        
+        if(answer)  // correct answer
+        {
+            correctAnswer();
+        }
+        else       // wrong answer 
+        {
+            wrongAnswer();
+        }
+    }
+    
+    public void correctAnswer()
+    {
+        int currentScore = player.getScore();
+        
+        if(((currentScore % 5)==0) || ((currentScore % 7)==0) || ((currentScore % 10)==0))
+        {
+            player.addReward(new Reward());
+            player.setScore(currentScore + 1);
+        }
+        else
+        {
+            player.setScore(currentScore + 1);
+        }
+    }
+    
+    public void wrongAnswer()
+    {
+        int currentScore = player.getScore();
+        
+        player.decretementLife();
+        player.setScore(currentScore);
     }
 }

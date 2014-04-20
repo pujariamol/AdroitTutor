@@ -1,17 +1,14 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.List;
 
-/**
- * Main Game engine of Adroid tutor
- * 
- * @version (a version number or a date)
- */
 public class AdroitTutorWorld extends World implements OnOptionSelectedListener,Observer
 {
-    static Player player=null;
+    static Player player = new Player();
     WordPicker wordPicker = new WordPicker();
     WordPickerMover wordpickermover = new WordPickerMover();
-    GameEngine gameEngine = new GameEngine(wordPicker);
+    Level currentLevel = new Level(Level.Difficulty.EASY);
+    GameEngine gameEngine = new GameEngine(this);
+    
     private static final int WELCOME_SCREEN_TIMEOUT = 2000;
 
     /**
@@ -21,6 +18,7 @@ public class AdroitTutorWorld extends World implements OnOptionSelectedListener,
     {    
         // Create a new world with 600x400  cells with a cell size of 1x1 pixels.
         super(1100, 600, 1);
+        
         prepare();
     }
     
@@ -50,7 +48,7 @@ public class AdroitTutorWorld extends World implements OnOptionSelectedListener,
         
         addObject(screen1, 484, 318);
         
-        player=new Player();
+        //player=new Player();
 
         final UIHandler uihandler = new UIHandler();
         new Thread(new Runnable() 
@@ -138,10 +136,25 @@ public class AdroitTutorWorld extends World implements OnOptionSelectedListener,
        
     }
     
-    
+    // Attaching observers to WordPicker
     public void attachObserversToWordPicker()
     {
         wordPicker.attach(gameEngine);
         wordPicker.attach(this);
+    }
+    
+    public WordPicker getWordPicker()
+    {
+        return wordPicker;
+    }
+    
+    public WordPickerMover getWordPickerMover()
+    {
+        return wordpickermover;
+    }
+    
+    public Level getCurrentLevel()
+    {
+        return currentLevel;
     }
 }

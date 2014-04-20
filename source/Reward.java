@@ -1,7 +1,8 @@
-public class Reward  
+import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+
+public class Reward extends Actor
 {
-    public Reward()
+    public void act() 
     {
-        
-    }
+    }    
 }

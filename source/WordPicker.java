@@ -92,6 +92,7 @@ public class WordPicker extends Pulley implements Subject
         //System.out.println("Picked word --> " + selectedAnswerOption.getOptionText());
         System.out.println("Updating obserevers....");
         notifyObservers();
+        
     }
     
     public Option getPickedWord()

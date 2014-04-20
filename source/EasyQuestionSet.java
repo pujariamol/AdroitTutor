@@ -8,7 +8,7 @@ public class EasyQuestionSet extends QuestionSet
     {
         questions=new ArrayList<Question>();
         
-        System.out.println("In EasyQuestionSet Constructor\n");
+        //System.out.println("In EasyQuestionSet Constructor\n");
         try
         {
             setQuestionSet();
@@ -43,7 +43,7 @@ public class EasyQuestionSet extends QuestionSet
                             q=new Question();
                             answerOptionsList=new java.util.ArrayList<String>();
                             q.setQuestion(line);
-                            q.getQuestion();
+                            //q.getQuestion();
                             break;
                     case 1:
                     case 2:
@@ -56,7 +56,7 @@ public class EasyQuestionSet extends QuestionSet
                             q.setCorrectAnswerIndex(line);
                             q.setAnswerOptions(answerOptionsList);
                             questions.add(q);
-                            displayQuestion(q);
+                            //displayQuestion(q);
                             break;                            
                    
                 }
