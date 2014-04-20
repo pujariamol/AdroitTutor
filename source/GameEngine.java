@@ -44,7 +44,7 @@ public class GameEngine implements Observer
     {
         int currentScore = player.getScore();
         
-        if(((currentScore % 5)==0) || ((currentScore % 7)==0) || ((currentScore % 10)==0))
+        if(((currentScore+1) % 5)==0 || ((currentScore % 8)==0) || ((currentScore % 10)==0))
         {
             player.addReward(new Reward());
             player.setScore(currentScore + 1);
