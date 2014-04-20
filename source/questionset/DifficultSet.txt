@@ -6,15 +6,13 @@ ambiguous
 0
 
 ______ is a word for "depart secretly and hide".
-
 obsolete
 abscond
 berate
 immaculate
 1
 
-______ is a word for "rebel,nonconformist".
- 
+______ is a word for "rebel,nonconformist". 
 mawkish
 parasite
 reaper
@@ -22,7 +20,6 @@ maverick
 3
 
 ______ is a word for "sudden violent change of feeling".
-
 revulsion
 obtrude
 polemic
@@ -30,7 +27,6 @@ nubile
 0
 
 ______ is a word for "hatefulness".
-
 nether
 lascivious
 odium
@@ -38,17 +34,13 @@ hamper
 2
 
 ______ is a word for "calm and peaceful".
-1
-
 halcyon
 rapacious
 sagacious
 tenacious
-
-
+1
 
 ______ is a word for "highly excited".
-
 agog
 allay
 crevice
@@ -57,30 +49,25 @@ lament
 
 
 ______ is a word for "motivated solely by money or gain".
-
 pedant
 throng
 mercenary
 tacit
 2
 
-
 ______ is a word for "excessive frugality".
-
 timbre
 parsimony
 spawn
 tenacious
 1
 
-
 ______ is a word for "lacking luxury and comfort".
-
 mundane
 stalwart
 Spartan
 prank
-
+2
 
 
 
