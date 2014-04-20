@@ -9,7 +9,7 @@ public class ScoreBoard extends Actor implements Observer
     
     public ScoreBoard()
     {
-        background= getImage();
+        background = getImage();
         player = AdroitTutorWorld.getPlayer();
         player.attach(this);
         displayScore();
@@ -36,13 +36,13 @@ public class ScoreBoard extends Actor implements Observer
         for(int i=0;i<no_of_lives; i++)
         {
             image.drawImage(lives[i], 50+(i*80), 150);
-        }    
+        }
         
     }
     
     public void displayRewards(GreenfootImage image)
     {
-        GreenfootImage rewardIcons[]=new GreenfootImage[3];
+        GreenfootImage rewardIcons[] = new GreenfootImage[3];
         
         for(int i=0;i<3;i++)
         {
@@ -74,7 +74,7 @@ public class ScoreBoard extends Actor implements Observer
         displayLives(image);
         displayRewards(image);
                         
-        image.scale(150,150);               
+        image.scale(220,150);               
         setImage(image);
     }
     

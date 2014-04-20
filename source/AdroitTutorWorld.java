@@ -11,6 +11,12 @@ public class AdroitTutorWorld extends World implements OnOptionSelectedListener,
     
     private static final int WELCOME_SCREEN_TIMEOUT = 2000;
 
+    IScreenHandler levelScreen = new LevelScreen(this);
+    IScreenHandler gamePlayScreen = new GamePlayScreen(this);
+    IScreenHandler rewardScreen = new RewardScreen(this);
+    IScreenHandler gameOverScreen = new GameOverScreen(this);
+    
+    
     /**
      * Constructor for objects of class AdroitTutorWorld.
      */
@@ -30,10 +36,6 @@ public class AdroitTutorWorld extends World implements OnOptionSelectedListener,
     {
         final WelcomeScreen screen1 = new WelcomeScreen();
         
-        final IScreenHandler levelScreen = new LevelScreen(this);
-        final IScreenHandler gamePlayScreen = new GamePlayScreen(this);
-        final IScreenHandler rewardScreen = new RewardScreen(this);
-        final IScreenHandler gameOverScreen = new GameOverScreen(this);
         
         levelScreen.setNextScreen(gamePlayScreen);
         gamePlayScreen.setNextScreen(rewardScreen);
@@ -81,6 +83,10 @@ public class AdroitTutorWorld extends World implements OnOptionSelectedListener,
         List<Option> optionList = getObjects(Option.class);
         removeObjects(optionList);
         
+        levelScreen.showScreen(ScreenType.GAMEPLAY);
+        
+        
+ /*       
         //addObject(wordpickermover, 530, 80);
         addObject(wordPicker, 530, 100);
         ScoreBoard scoreBoard = new ScoreBoard();
@@ -95,6 +101,7 @@ public class AdroitTutorWorld extends World implements OnOptionSelectedListener,
             addObject(answerOption, 100 + (i * 200), 550);
             option.turn(i * 100);
         }
+*/
     }
 
     public static Player getPlayer()
@@ -110,25 +117,13 @@ public class AdroitTutorWorld extends World implements OnOptionSelectedListener,
         System.out.println("Picked word removed from world");
     }
     
-    public void showGamePlayScreen()
-    {
-        System.out.println("Game Play Screen");
-        
-    }
+   
     
     public void showGameOverScreen(){
         System.out.println("Game Over Screen");
     }
     
-    public void showLevelScreen()
-    {
-        for(int i=0;i < Level.Difficulty.values().length;i++)
-        {
-            Option option = new Option(Level.Difficulty.values()[i].toString());
-            addObject(option, 500, 100 + (i * 200));
-            option.setOptionSelectedListener(this);
-        }
-    }
+    
     
     public void showRewardScreen()
     {
