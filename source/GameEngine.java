@@ -36,6 +36,10 @@ public class GameEngine implements Observer
         }
         else       // wrong answer 
         {
+            if(player.getLives() == 1)
+            {
+                System.out.println("GAME OVER !!");
+            }
             wrongAnswer();
         }
     }

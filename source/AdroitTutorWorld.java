@@ -74,7 +74,7 @@ public class AdroitTutorWorld extends World implements OnOptionSelectedListener,
         
         
         // attaching observers
-        attachObserversToWordPicker();
+
     }
        
     public void onOptionSelected(Option option)
@@ -99,7 +99,7 @@ public class AdroitTutorWorld extends World implements OnOptionSelectedListener,
              currentLevel = new DifficultLevel();
         }
         gameEngine = new GameEngine(this);
-        
+        attachObserversToWordPicker();
  /*       
         //addObject(wordpickermover, 530, 80);
         addObject(wordPicker, 530, 100);

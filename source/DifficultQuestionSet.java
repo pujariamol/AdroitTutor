@@ -28,7 +28,7 @@ public class DifficultQuestionSet extends QuestionSet
     {
         try
         {
-            BufferedReader reader = new BufferedReader(new FileReader("c:/Users/prasad/Desktop/courses/CMPE202/CMPE202/source/questionset/DifficultSet.txt"));
+            BufferedReader reader = new BufferedReader(new FileReader("./questionset/DifficultSet.txt"));
             String line = null,QueStr[];
             int i=0;
             java.util.List<String> answerOptionsList = new java.util.ArrayList<String>();

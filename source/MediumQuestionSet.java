@@ -28,7 +28,7 @@ public class MediumQuestionSet extends QuestionSet
     {
         try
         {
-            BufferedReader reader = new BufferedReader(new FileReader("c:/Users/prasad/Desktop/courses/CMPE202/CMPE202/source/questionset/MediumSet.txt"));
+            BufferedReader reader = new BufferedReader(new FileReader("./questionset/MediumSet.txt"));
 //            C:\Users\prasad\Desktop\Courses\CMPE 202\CMPE202\source\questionset
             String line = null,QueStr[];
             int i=0;
