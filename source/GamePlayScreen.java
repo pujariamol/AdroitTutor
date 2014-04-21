@@ -8,7 +8,9 @@ import java.util.ArrayList;
  */
 public class GamePlayScreen extends Screen
 {    
-    IScreenHandler nextScreen = null;
+    private IScreenHandler nextScreen = null;
+    private Question question = null;
+    private QuestionActor questionActor = null;
     
     public GamePlayScreen(AdroitTutorWorld world){
         super(world);
@@ -48,6 +50,7 @@ public class GamePlayScreen extends Screen
     }
     
     private void showQuestions(){
+        /*
         Question ques = new Question();
         ques.setQuestion("Whats the question");
         ArrayList<String> options = new ArrayList<String>();
@@ -56,9 +59,12 @@ public class GamePlayScreen extends Screen
         options.add("Jayesh");
         options.add("Amit");
         ques.setAnswerOptions(options);
-
-        QuestionActor question = new QuestionActor(ques);
-        this.world.addObject(question,1080,300);      
+        */
+       
+        if(questionActor == null)
+            questionActor = new QuestionActor(question);
+        this.world.setQuestionActor(questionActor);
+        this.world.addObject(questionActor,1080,300);      
     }
     
     private void showOptions(){
@@ -71,6 +77,14 @@ public class GamePlayScreen extends Screen
     
     private void showTools(){
         this.world.addObject(this.world.wordPicker, 530, 100);
+    }
+    
+    
+    public void updateQuestion(Question question)
+    {
+        this.question=question;
+        showQuestions();
+        showOptions();
     }
     
 }

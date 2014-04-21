@@ -8,6 +8,7 @@ public class AdroitTutorWorld extends World implements OnOptionSelectedListener,
     WordPickerMover wordpickermover = new WordPickerMover();
     Level currentLevel = null;//new Level(Level.Difficulty.EASY);
     GameEngine gameEngine = null;
+    QuestionActor questionActor = null;
     
     private static final int WELCOME_SCREEN_TIMEOUT = 2000;
 
@@ -83,7 +84,6 @@ public class AdroitTutorWorld extends World implements OnOptionSelectedListener,
         List<Option> optionList = getObjects(Option.class);
         removeObjects(optionList);
         
-        levelScreen.showScreen(ScreenType.GAMEPLAY);
         //currentLevel = new Level(option.getOptionText());
         String difficulty = option.getOptionText();
         if(difficulty.equalsIgnoreCase("Easy"))
@@ -99,6 +99,7 @@ public class AdroitTutorWorld extends World implements OnOptionSelectedListener,
              currentLevel = new DifficultLevel();
         }
         gameEngine = new GameEngine(this);
+        levelScreen.showScreen(ScreenType.GAMEPLAY);
         attachObserversToWordPicker();
  /*       
         //addObject(wordpickermover, 530, 80);
@@ -165,5 +166,25 @@ public class AdroitTutorWorld extends World implements OnOptionSelectedListener,
     public Level getCurrentLevel()
     {
         return currentLevel;
+    }
+    
+    public void setQuestionActor(QuestionActor questionActor)
+    {
+        this.questionActor = questionActor;
+    }
+    
+    public QuestionActor getQuestionActor()
+    {
+        return this.questionActor;
+    }
+    
+    public IScreenHandler getGamePlayScreen()
+    {
+        return this.gamePlayScreen;
+    }
+    
+    public GameEngine getGameEngine()
+    {
+        return this.gameEngine;
     }
 }

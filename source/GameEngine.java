@@ -23,6 +23,12 @@ public class GameEngine implements Observer
         String selectedAnswerOption = wordPicker.getPickedWord().getOptionText();
         System.out.println("User Picked Word::" + selectedAnswerOption);
         evaluateAnswer(selectedAnswerOption);
+        
+        adroitTutorWorld.getGamePlayScreen()
+        displayNextQuestion(questionSetIterator.getNextQuestion());
+        
+       // adroitTutorWorld.getQuestionActor().displayQuestion(questionSetIterator.getNextQuestion());
+        
     }
     
     public void evaluateAnswer(String selectedAnswerOption)

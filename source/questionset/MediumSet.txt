@@ -4,63 +4,54 @@ jaunt
 regime
 platitude
 3
-
-______ is a word for "substance or rich soil formed by decaying vegetable matter".
-humus
-scanty
-sylvan
-hubris
-0
-
 ______ is a word for "attacking cherished traditions".
 fatalism
 iconoclastic
 tenacious
 flaunt
 1
-
+______ is a word for "substance or rich soil formed by decaying vegetable matter".
+humus
+scanty
+sylvan
+hubris
+0
 ______ is a word for "person devoted to pleasure and luxury".
 sybarite
 gourmand
 thrifty
 sycophant
 1
-
 ______ is a word for "sudden disastrous downfall or defeat".
 defame
 appraise
 debacle
 atrophy
 2
-
 ______ is a word for "heavy vaporous atmosphere often emanating from decaying matter".
 miasma
 annex
 cajole
 lament
 0
-
 ______ is a word for "narrow-mindedness".
 insularity
 confound
 dauntless
 antiquity
 3
-
 ______ is a word for "language used by special group".
 cabal
 jargon
 isotope
 haitus
 1
-
 ______ is a word for "earthen or stone embankment to prevent flooding".
 avarice
 morose
 levee
 obese
 2
-
 ______ is a word for "necessary requirement".
 requisite
 intrepid
