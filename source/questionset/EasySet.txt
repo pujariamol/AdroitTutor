@@ -1,66 +1,63 @@
+______ is a word for "clever or skillful in using the hands or mind".
+Adroit
+Abhor
+Bigot
+Kindle
+0
 ______ is a word for "misleading".
 frantic
 delusive
 extort
 ferment
-1
-
+0
 ______ is a word for "changing its habitat or wandering".
 eclectic
 pedantic
 homely
 migrant
 3
-
 ______ is a word for "animal or plant living on another".
 crone
 infantile
 parasite
 pervert
 2
-
 ______ is a word for "having the power of springing back".
 resilient
 erratic
 intrude
 linger
 0
-
 ______ is a word for "rushing stream".
 musty
 lewd
 musty
 torrent
 3
-
 ______ is a word for "unexpected lucky event".
 indulge
 nimble
 windfall
 occlude
 2
-
 ______ is a word for "eager enthusiasm".
 nectar
 novelty
 fulsome
 zeal
 3
-
 ______ is a word for "original work used as a model by others".
 prototype
 synoptic
 novice
 paradox
 0
-
 ______ is a word for "very small quantity".
 cull
 exult
 iota
 perigee
 2
-
 ______ is a word for "essential or main point".
 fissure
 crux
