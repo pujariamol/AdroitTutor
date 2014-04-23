@@ -4,4 +4,5 @@ public class MediumLevel extends Level
     {
         questionSet = new MediumQuestionSet();
     }
+
 }
