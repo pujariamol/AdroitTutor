@@ -10,11 +10,17 @@ public class Player implements Subject
 	private Life life;
 	private List<Reward> rewards;
 	private ArrayList<Observer> observers = new ArrayList<Observer>() ;
-	
-	public Player() {
-		setScore(0);
-		setLife(Life.THREE);
-		rewards = new ArrayList<Reward>();
+	private static Player instance = null;
+    
+    public static Player getInstance(){
+        if(instance == null){
+            instance = new Player();
+        }
+        return instance;
+    }
+    
+	private Player() {
+	    reset();
 	}
 	
 	public int getScore() {
@@ -53,6 +59,8 @@ public class Player implements Subject
 	}
 	
 	public void decretementLife() {
+	    System.out.println("In Decrement Life ....");
+	    
 		switch(getLife()) {
 			case THREE:
 				setLife(Life.TWO);
@@ -93,6 +101,12 @@ public class Player implements Subject
         {
             obj.update();
         }
+    }
+    
+    public void reset(){
+		setScore(0);
+		setLife(Life.THREE);
+		rewards = new ArrayList<Reward>();
     }
 
 }

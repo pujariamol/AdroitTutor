@@ -13,8 +13,7 @@ public class QuestionActor extends Actor
     private GreenfootImage background;
 
     public QuestionActor(Question question){
-        this.background = getImage();
-        displayQuestion(question);
+        this.background = getImage();        
     }
 
     public void displayQuestion(Question question){

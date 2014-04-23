@@ -7,8 +7,7 @@ public class EasyQuestionSet extends QuestionSet
     public EasyQuestionSet()
     {
         questions=new ArrayList<Question>();
-        QuestionSet qs=new EasyQuestionSet();
-        //System.out.println("In EasyQuestionSet Constructor\n");
+        
         try
         {
             setQuestionSet();

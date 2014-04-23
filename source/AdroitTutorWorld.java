@@ -3,10 +3,10 @@ import java.util.List;
 
 public class AdroitTutorWorld extends World implements OnOptionSelectedListener,Observer
 {
-    static Player player = new Player();
-    WordPicker wordPicker = new WordPicker();
-    WordPickerMover wordpickermover = new WordPickerMover();
-    Level currentLevel = null;//new Level(Level.Difficulty.EASY);
+    static Player player = Player.getInstance();
+    WordPicker wordPicker = WordPicker.getInstance();
+    WordPickerMover wordpickermover = WordPickerMover.getInstance();
+    Level currentLevel = null;
     GameEngine gameEngine = null;
     QuestionActor questionActor = null;
     
@@ -42,17 +42,8 @@ public class AdroitTutorWorld extends World implements OnOptionSelectedListener,
         gamePlayScreen.setNextScreen(rewardScreen);
         rewardScreen.setNextScreen(gameOverScreen);
         
-        //---------For Reference Start--------
-        //levelScreen.showScreen(ScreenType.GAMEPLAY);
-        //levelScreen.showScreen(ScreenType.GAMEOVER);
-        //levelScreen.showScreen(ScreenType.LEVEL);
-        //levelScreen.showScreen(ScreenType.REWARD);
-        //---------For Reference ends--------
-        
         addObject(screen1, 484, 318);
         
-        //player=new Player();
-
         final UIHandler uihandler = new UIHandler();
         new Thread(new Runnable() 
         {
@@ -72,19 +63,24 @@ public class AdroitTutorWorld extends World implements OnOptionSelectedListener,
                 }
             }
         }).start();
-        
-        
-        // attaching observers
-
     }
-       
+    
+ /*   public void initilize()
+    {
+        player = Player.getInstance();
+        wordPicker = WordPicker.getInstance();
+        wordpickermover = WordPickerMover.getInstance();
+        currentLevel = null;
+        gameEngine = null;
+        questionActor = null;
+    }
+*/       
     public void onOptionSelected(Option option)
     {
         System.out.println("Inside world option selected --> " + option.getOptionText());
         List<Option> optionList = getObjects(Option.class);
         removeObjects(optionList);
         
-        //currentLevel = new Level(option.getOptionText());
         String difficulty = option.getOptionText();
         if(difficulty.equalsIgnoreCase("Easy"))
         {
@@ -92,31 +88,18 @@ public class AdroitTutorWorld extends World implements OnOptionSelectedListener,
         }
         else if(difficulty.equalsIgnoreCase("Medium"))
         {
-              currentLevel = new MediumLevel();
+             currentLevel = new MediumLevel();
         }
         else
         {
              currentLevel = new DifficultLevel();
         }
-        gameEngine = new GameEngine(this);
+        //gameEngine = new GameEngine(this);
+        gameEngine = GameEngine.getInstance(this);
+        gameEngine.initialize();
         levelScreen.showScreen(ScreenType.GAMEPLAY);
         attachObserversToWordPicker();
- /*       
-        //addObject(wordpickermover, 530, 80);
-        addObject(wordPicker, 530, 100);
-        ScoreBoard scoreBoard = new ScoreBoard();
-        addObject(scoreBoard, 980, 500);
-        
-        GreenfootImage greenfootImage = new GreenfootImage("./images/game_screen_bg.png");
-        setBackground(greenfootImage);
-        
-        for(int i=0; i < 4; i++)
-        {
-            Option answerOption = new Option("" + (i + 1));
-            addObject(answerOption, 100 + (i * 200), 550);
-            option.turn(i * 100);
-        }
-*/
+
     }
 
     public static Player getPlayer()
@@ -130,20 +113,6 @@ public class AdroitTutorWorld extends World implements OnOptionSelectedListener,
         // remove user selected word from World
         this.removeObject(wordPicker.getPickedWord());
         System.out.println("Picked word removed from world");
-    }
-    
-   
-    
-    public void showGameOverScreen(){
-        System.out.println("Game Over Screen");
-    }
-    
-    
-    
-    public void showRewardScreen()
-    {
-        System.out.println("Reward Screen");
-       
     }
     
     // Attaching observers to WordPicker
@@ -186,5 +155,19 @@ public class AdroitTutorWorld extends World implements OnOptionSelectedListener,
     public GameEngine getGameEngine()
     {
         return this.gameEngine;
+    }
+    
+    public void changeScreen(ScreenType screenType){
+        levelScreen.showScreen(screenType);
+    }
+    
+    public void reset(){
+        player.reset();
+        player = Player.getInstance();
+        wordPicker = WordPicker.getInstance();
+        wordpickermover = WordPickerMover.getInstance();
+        currentLevel = null;
+        gameEngine = null;
+        questionActor = null;
     }
 }

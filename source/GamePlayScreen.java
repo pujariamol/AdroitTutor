@@ -1,5 +1,6 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-import java.util.ArrayList;
+import java.util.*;
+
 /**
  * Write a description of class GameScreen here.
  * 
@@ -11,9 +12,11 @@ public class GamePlayScreen extends Screen
     private IScreenHandler nextScreen = null;
     private Question question = null;
     private QuestionActor questionActor = null;
+    List<Option> exisitingOptions = new ArrayList<Option>();
     
     public GamePlayScreen(AdroitTutorWorld world){
         super(world);
+        
     }
     
     public void showScreen(ScreenType screenType){
@@ -35,7 +38,9 @@ public class GamePlayScreen extends Screen
         System.out.println("Game Play Screen");
         
         GreenfootImage greenfootImage = new GreenfootImage("./images/game_screen_bg.png");
-        this.world.setBackground(greenfootImage);
+        this.adroitTutorWorld.setBackground(greenfootImage);
+       
+        this.question = this.adroitTutorWorld.getGameEngine().getQuestionSetIterator().currentQuestion();
         
         showTools();
         showOptions();
@@ -46,44 +51,52 @@ public class GamePlayScreen extends Screen
     
     private void showScoreBoard(){
         ScoreBoard scoreBoard = new ScoreBoard();
-        this.world.addObject(scoreBoard, 980, 500);
+        this.adroitTutorWorld.addObject(scoreBoard, 980, 500);
     }
     
     private void showQuestions(){
-        /*
-        Question ques = new Question();
-        ques.setQuestion("Whats the question");
-        ArrayList<String> options = new ArrayList<String>();
-        options.add("Vishal");
-        options.add("Mahesh");
-        options.add("Jayesh");
-        options.add("Amit");
-        ques.setAnswerOptions(options);
-        */
-       
-        if(questionActor == null)
-            questionActor = new QuestionActor(question);
-        this.world.setQuestionActor(questionActor);
-        this.world.addObject(questionActor,1080,300);      
+System.out.println("---------------------Inside show questions");
+        if(questionActor == null){
+            questionActor = new QuestionActor(this.question);
+        }
+        questionActor.displayQuestion(this.question);
+        this.adroitTutorWorld.setQuestionActor(questionActor);
+        this.adroitTutorWorld.addObject(questionActor,1080,300);      
     }
     
     private void showOptions(){
-        for(int i=0; i < 4; i++)
+        List<String> answerOptions= this.question.getAnswerOptions();
+        System.out.println("---------------------Inside show options");
+        for(int i=0; i < answerOptions.size(); i++)
         {
-            Option answerOption = new Option("" + (i + 1));
-            this.world.addObject(answerOption, 100 + (i * 200), 550);
+            Option answerOption = new Option(answerOptions.get(i));
+            exisitingOptions.add(answerOption);
+            this.adroitTutorWorld.addObject(answerOption, 100 + (i * 200), 550);
+        }
+    }
+    
+    private void clearOptions()
+    {
+        int optionsSize = exisitingOptions.size();
+        
+        if(optionsSize != 0){
+            do
+            {
+                this.adroitTutorWorld.removeObject(exisitingOptions.get(0));
+                exisitingOptions.remove(0);
+            } while(exisitingOptions.size() > 0);
         }
     }
     
     private void showTools(){
-        this.world.addObject(this.world.wordPicker, 530, 100);
+        this.adroitTutorWorld.addObject(this.adroitTutorWorld.wordPicker, 530, 100);
     }
-    
     
     public void updateQuestion(Question question)
     {
         this.question=question;
         showQuestions();
+        clearOptions();
         showOptions();
     }
     

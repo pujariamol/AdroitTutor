@@ -6,9 +6,9 @@
  */
 public abstract class Screen implements IScreenHandler
 {
-    AdroitTutorWorld world = null;
+    AdroitTutorWorld adroitTutorWorld = null;
     public Screen(AdroitTutorWorld world)
     {
-        this.world = world;
+        this.adroitTutorWorld = world;
     }
 }

@@ -16,14 +16,25 @@ public class GameOverScreen extends Screen
     
     public void showScreen(ScreenType screenType){
         if(screenType == ScreenType.GAMEOVER){
-            this.world.showGameOverScreen();
+            showGameOverScreen();
         }else if(this.nextScreen != null){
-            System.out.println("Game over Screen to next Screen ");    
+            System.out.println("Game over Screen to next Screen ");
             this.nextScreen.showScreen(screenType);
         }
     }
     
     public void setNextScreen(IScreenHandler nextScreen){
         this.nextScreen = nextScreen;
+    }
+    
+    private void showGameOverScreen(){
+       this.adroitTutorWorld.removeObjects(this.adroitTutorWorld.getObjects(null));
+       GreenfootImage greenfootImage = new GreenfootImage("./images/GameOver.jpeg");
+       greenfootImage.scale(1100,600);
+       this.adroitTutorWorld.setBackground(greenfootImage);
+       Greenfoot.delay(125);
+       this.adroitTutorWorld.setBackground("./images/largeTransparent.gif");
+       this.adroitTutorWorld.reset();
+       this.adroitTutorWorld.changeScreen(ScreenType.LEVEL);
     }
 }

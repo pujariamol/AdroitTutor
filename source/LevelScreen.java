@@ -33,8 +33,8 @@ public class LevelScreen extends Screen
         for(int i=0;i < Level.Difficulty.values().length;i++)
         {
             Option option = new Option(Level.Difficulty.values()[i].toString());
-            this.world.addObject(option, 500, 100 + (i * 200));
-            option.setOptionSelectedListener(this.world);
+            this.adroitTutorWorld.addObject(option, 500, 100 + (i * 200));
+            option.setOptionSelectedListener(this.adroitTutorWorld);
         }
     }
 }

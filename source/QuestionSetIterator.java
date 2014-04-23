@@ -18,10 +18,10 @@ public class QuestionSetIterator
     
     public Question getNextQuestion()
     {
-        cursor++;
         
         if(! isDone())
         {
+            cursor++;
             return currentQuestionSet.getQuestions().get(cursor);
         }
         else
@@ -33,6 +33,6 @@ public class QuestionSetIterator
     
     public boolean isDone()
     {
-        return ( cursor == max );
+        return ( (cursor+1) == max );
     }
 }

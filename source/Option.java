@@ -20,7 +20,7 @@ public class Option extends Actor
     public Option(String optionText)
     {
         this.optionText = optionText;
-        GreenfootImage img = new GreenfootImage(optionText, 48, Color.BLACK, new Color(0,0,0,0));
+        GreenfootImage img = new GreenfootImage(optionText, 25, Color.BLACK, new Color(0,0,0,0));
         setImage(img);
     }
     

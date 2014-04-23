@@ -1,5 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-import java.util.ArrayList;
+import java.util.*;
 
 public class WordPicker extends Pulley implements Subject
 {
@@ -18,9 +18,17 @@ public class WordPicker extends Pulley implements Subject
     private Option selectedAnswerOption;
     
     // Added by Mahesh
-    private ArrayList<Observer> observers = new ArrayList<Observer>();
+    private Set<Observer> observers = new HashSet<Observer>();
+    private static WordPicker instance = null;
     
-    public WordPicker()
+    public static WordPicker getInstance(){
+        if(instance == null){
+            instance = new WordPicker();
+        }
+        return instance;
+    }
+    
+    private WordPicker()
     {
         wordPickerMovingUpState = new MovingUpState(this);
         wordPickerMovingDownState = new MovingDownState(this);
