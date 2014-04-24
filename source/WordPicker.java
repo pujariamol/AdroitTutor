@@ -103,7 +103,7 @@ public class WordPicker extends Pulley implements Subject
         
     }
     
-    public Option getPickedWord()
+    public Option getPickedAnswerOption()
     {
         return selectedAnswerOption;
     }
