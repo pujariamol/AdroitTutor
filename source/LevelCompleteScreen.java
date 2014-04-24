@@ -6,17 +6,17 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author Amol Pujari 
  * @version (a version number or a date)
  */
-public class RewardScreen extends Screen
+public class LevelCompleteScreen extends Screen
 {
     IScreenHandler nextScreen = null;
     
-    public RewardScreen(AdroitTutorWorld world){
+    public LevelCompleteScreen(AdroitTutorWorld world){
         super(world);
     }
     
     public void showScreen(ScreenType screenType){
-        if(screenType == ScreenType.REWARD){
-            showRewardScreen();
+        if(screenType == ScreenType.LEVELCOMPLETE){
+            showLevelCompleteScreen();
         }else if(this.nextScreen != null){
             System.out.println("Reward Screen to next Screen ");
             this.nextScreen.showScreen(screenType);
@@ -27,7 +27,7 @@ public class RewardScreen extends Screen
         this.nextScreen = nextScreen;
     }
     
-    public void showRewardScreen()
+    public void showLevelCompleteScreen()
     {
        this.adroitTutorWorld.removeObjects(this.adroitTutorWorld.getObjects(null));
        GreenfootImage greenfootImage = new GreenfootImage("./images/RewardScreen.png");
