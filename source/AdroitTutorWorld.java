@@ -14,7 +14,7 @@ public class AdroitTutorWorld extends World implements OnOptionSelectedListener,
 
     IScreenHandler levelScreen = new LevelScreen(this);
     IScreenHandler gamePlayScreen = new GamePlayScreen(this);
-    IScreenHandler rewardScreen = new RewardScreen(this);
+    IScreenHandler levelCompleteScreen = new LevelCompleteScreen(this);
     IScreenHandler gameOverScreen = new GameOverScreen(this);
     
     /**
@@ -40,8 +40,8 @@ public class AdroitTutorWorld extends World implements OnOptionSelectedListener,
         screen1.setImage(welcomeBackground);
         
         levelScreen.setNextScreen(gamePlayScreen);
-        gamePlayScreen.setNextScreen(rewardScreen);
-        rewardScreen.setNextScreen(gameOverScreen);
+        gamePlayScreen.setNextScreen(levelCompleteScreen);
+        levelCompleteScreen.setNextScreen(gameOverScreen);
         
         addObject(screen1, 484, 318);
         

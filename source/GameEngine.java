@@ -51,7 +51,7 @@ public class GameEngine implements Observer
             if(questionSetIterator.isDone())
             {
                 System.out.println("Congrats..You have completed Level");
-                adroitTutorWorld.changeScreen(ScreenType.REWARD);
+                adroitTutorWorld.changeScreen(ScreenType.LEVELCOMPLETE);
             }
             else
             {
