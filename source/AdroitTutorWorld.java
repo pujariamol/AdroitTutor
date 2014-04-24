@@ -89,7 +89,7 @@ public class AdroitTutorWorld extends World implements OnOptionSelectedListener,
     public void update()
     {
         // remove user selected word from World
-        this.removeObject(wordPicker.getPickedWord());
+        this.removeObject(wordPicker.getPickedAnswerOption());
         System.out.println("Picked word removed from world");
     }
     
