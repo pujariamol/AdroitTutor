@@ -72,19 +72,8 @@ public class AdroitTutorWorld extends World implements OnOptionSelectedListener,
         List<Option> optionList = getObjects(Option.class);
         removeObjects(optionList);
         
-        String difficulty = option.getOptionText();
-        if(difficulty.equalsIgnoreCase("Easy"))
-        {
-             currentLevel = new EasyLevel();
-        }
-        else if(difficulty.equalsIgnoreCase("Medium"))
-        {
-             currentLevel = new MediumLevel();
-        }
-        else
-        {
-             currentLevel = new DifficultLevel();
-        }
+        currentLevel = LevelSetFactory.createLevel(option.getOptionText());
+        
         gameEngine = GameEngine.getInstance(this);
         gameEngine.initialize();
         levelScreen.showScreen(ScreenType.GAMEPLAY);
