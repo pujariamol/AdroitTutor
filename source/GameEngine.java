@@ -4,11 +4,11 @@ public class GameEngine implements Observer
 {
     private static GameEngine instance=null;
     private boolean isGameOver = false;
-    protected WordPicker wordPicker;
-    protected Level level;
-    protected Player player;
-    protected AdroitTutorWorld adroitTutorWorld;
-    protected QuestionSetIterator questionSetIterator;
+    private WordPicker wordPicker;
+    private Level level;
+    private Player player;
+    private AdroitTutorWorld adroitTutorWorld;
+    private QuestionSetIterator questionSetIterator;
     
     private GameEngine(AdroitTutorWorld atw)
     {

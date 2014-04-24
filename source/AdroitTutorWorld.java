@@ -10,7 +10,7 @@ public class AdroitTutorWorld extends World implements OnOptionSelectedListener,
     GameEngine gameEngine = null;
     QuestionActor questionActor = null;
     
-    private static final int WELCOME_SCREEN_TIMEOUT = 2000;
+    static final int WELCOME_SCREEN_TIMEOUT = 2000;
 
     IScreenHandler levelScreen = new LevelScreen(this);
     IScreenHandler gamePlayScreen = new GamePlayScreen(this);
@@ -99,8 +99,6 @@ public class AdroitTutorWorld extends World implements OnOptionSelectedListener,
     
     public void update()
     {
-        System.out.println("In update call of AdroitTutorWorld Observer..");
-    
         // remove user selected word from World
         this.removeObject(wordPicker.getPickedWord());
         System.out.println("Picked word removed from world");
