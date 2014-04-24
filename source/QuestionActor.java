@@ -22,9 +22,10 @@ public class QuestionActor extends Actor
         GreenfootImage image = new GreenfootImage(this.background);
         GreenfootImage img = new GreenfootImage(1000,80);
         img.setFont(new java.awt.Font("Helvetica", java.awt.Font.PLAIN, 22));
-        img.setColor(Color.WHITE);
+        img.setColor(Color.BLACK);
         img.drawString(question.getQuestion(),0,20);
         image.drawImage(img,2,12);
+
 
         setImage(image);
     }

@@ -60,6 +60,7 @@ public class GamePlayScreen extends Screen
         questionActor.displayQuestion(this.question);
         this.adroitTutorWorld.setQuestionActor(questionActor);
         this.adroitTutorWorld.addObject(questionActor,550,400);      
+
     }
     
     private void showOptions(){
