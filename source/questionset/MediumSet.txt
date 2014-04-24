@@ -1,60 +1,60 @@
 ______ is a word for "commonplace statement".
-antique
-jaunt
-regime
-platitude
+Antique
+Jaunt
+Regime
+Platitude
 3
 ______ is a word for "attacking cherished traditions".
-fatalism
-iconoclastic
-tenacious
-flaunt
+Fatalism
+Iconoclastic
+Tenacious
+Flaunt
 1
 ______ is a word for "substance or rich soil formed by decaying vegetable matter".
-humus
-scanty
-sylvan
-hubris
+Humus
+Scanty
+Sylvan
+Hubris
 0
 ______ is a word for "person devoted to pleasure and luxury".
-sybarite
-gourmand
-thrifty
-sycophant
+Sybarite
+Gourmand
+Thrifty
+Sycophant
 1
 ______ is a word for "sudden disastrous downfall or defeat".
-defame
-appraise
-debacle
-atrophy
+Defame
+Appraise
+Debacle
+Atrophy
 2
 ______ is a word for "heavy vaporous atmosphere often emanating from decaying matter".
-miasma
-annex
-cajole
-lament
+Miasma
+Annex
+Cajole
+Lament
 0
 ______ is a word for "narrow-mindedness".
-insularity
-confound
-dauntless
-antiquity
+Insularity
+Confound
+Dauntless
+Antiquity
 3
 ______ is a word for "language used by special group".
-cabal
-jargon
-isotope
-haitus
+Cabal
+Jargon
+Isotope
+Haitus
 1
 ______ is a word for "earthen or stone embankment to prevent flooding".
-avarice
-morose
-levee
-obese
+Avarice
+Morose
+Levee
+Obese
 2
 ______ is a word for "necessary requirement".
-requisite
-intrepid
-ominous
-regime
+Requisite
+Intrepid
+Ominous
+Regime
 0

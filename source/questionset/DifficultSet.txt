@@ -1,60 +1,60 @@
 ______ is a word for "lacking serious intent".
-facetious
-pedantic
-esoteric
-ambiguous
+Facetious
+Pedantic
+Esoteric
+Ambiguous
 0
 ______ is a word for "depart secretly and hide".
-obsolete
-abscond
-berate
-immaculate
+Obsolete
+Abscond
+Berate
+Immaculate
 1
 ______ is a word for "rebel,nonconformist". 
-mawkish
-parasite
-reaper
-maverick
+Mawkish
+Parasite
+Reaper
+Maverick
 3
 ______ is a word for "sudden violent change of feeling".
-revulsion
-obtrude
-polemic
-nubile
+Revulsion
+Obtrude
+Polemic
+Nubile
 0
 ______ is a word for "hatefulness".
-nether
-lascivious
-odium
-hamper
+Nether
+Lascivious
+Odium
+Hamper
 2
 ______ is a word for "calm and peaceful".
-halcyon
-rapacious
-sagacious
-tenacious
+Halcyon
+Rapacious
+Sagacious
+Tenacious
 1
 ______ is a word for "highly excited".
-agog
-allay
-crevice
-lament
+Agog
+Allay
+Crevice
+Lament
 0
 ______ is a word for "motivated solely by money or gain".
-pedant
-throng
-mercenary
-tacit
+Pedant
+Throng
+Mercenary
+Tacit
 2
 ______ is a word for "excessive frugality".
-timbre
-parsimony
-spawn
-tenacious
+Timbre
+Parsimony
+Spawn
+Tenacious
 1
 ______ is a word for "lacking luxury and comfort".
-mundane
-stalwart
+Mundane
+Stalwart
 Spartan
-prank
+Prank
 2

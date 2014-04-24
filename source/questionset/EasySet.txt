@@ -5,62 +5,62 @@ Bigot
 Kindle
 0
 ______ is a word for "misleading".
-frantic
-delusive
-extort
-ferment
+Frantic
+Delusive
+Extort
+Ferment
 0
 ______ is a word for "changing its habitat or wandering".
-eclectic
-pedantic
-homely
-migrant
+Eclectic
+Pedantic
+Homely
+Migrant
 3
 ______ is a word for "animal or plant living on another".
-crone
-infantile
-parasite
-pervert
+Crone
+Infantile
+Parasite
+Pervert
 2
 ______ is a word for "having the power of springing back".
-resilient
-erratic
-intrude
-linger
+Resilient
+Erratic
+Intrude
+Linger
 0
 ______ is a word for "rushing stream".
-musty
-lewd
-musty
-torrent
+Musty
+Lewd
+Nectar
+Torrent
 3
 ______ is a word for "unexpected lucky event".
-indulge
-nimble
-windfall
-occlude
+Indulge
+Nimble
+Windfall
+Occlude
 2
 ______ is a word for "eager enthusiasm".
-nectar
-novelty
-fulsome
-zeal
+Nectar
+Novelty
+Fulsome
+Zeal
 3
 ______ is a word for "original work used as a model by others".
-prototype
-synoptic
-novice
-paradox
+Prototype
+Synoptic
+Novice
+Paradox
 0
 ______ is a word for "very small quantity".
-cull
-exult
-iota
-perigee
+Cull
+Exult
+Iota
+Perigee
 2
 ______ is a word for "essential or main point".
-fissure
-crux
-impart
-jaunt
+Fissure
+Crux
+Impart
+Jaunt
 1
