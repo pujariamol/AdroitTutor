@@ -1,4 +1,4 @@
-public class LevelSetFactory  
+public class LevelFactory  
 {
     public static Level createLevel(String difficulty)
     {            

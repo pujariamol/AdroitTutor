@@ -1,12 +1,18 @@
 #BlueJ class context
 comment0.params=atw
 comment0.target=GameEngine(AdroitTutorWorld)
-comment1.params=
-comment1.target=void\ update()
-comment2.params=selectedAnswerOption
-comment2.target=void\ evaluateAnswer(java.lang.String)
+comment1.params=atw
+comment1.target=GameEngine\ getInstance(AdroitTutorWorld)
+comment2.params=
+comment2.target=void\ initialize()
 comment3.params=
-comment3.target=void\ correctAnswer()
-comment4.params=
-comment4.target=void\ wrongAnswer()
-numComments=5
+comment3.target=void\ update()
+comment4.params=selectedAnswerOption
+comment4.target=void\ evaluateAnswer(java.lang.String)
+comment5.params=
+comment5.target=void\ correctAnswer()
+comment6.params=
+comment6.target=void\ wrongAnswer()
+comment7.params=
+comment7.target=QuestionSetIterator\ getQuestionSetIterator()
+numComments=8

@@ -83,9 +83,9 @@ public class WordPicker extends Pulley implements Subject
         wordPickerState.moveDown();
     }
     
-    public void isIntersectingWord()
+    public void intersectingWord()
     {
-        wordPickerState.isIntersectingWord();
+        wordPickerState.intersectingWord();
     }
     
     public Actor getIntersectingWord()

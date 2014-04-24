@@ -32,7 +32,7 @@ public class MovingUpState implements WordPickerState {
         System.out.println("Can't move down while picking up word");
     }
 
-    public void isIntersectingWord()
+    public void intersectingWord()
     {
         System.out.println("Can't intersect while picking up word");
     }

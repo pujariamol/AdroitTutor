@@ -6,5 +6,5 @@ public interface WordPickerState
     
 	public void moveUp(Option word);
 	public void moveDown();
-	public void isIntersectingWord();
+	public void intersectingWord();
 }

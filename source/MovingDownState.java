@@ -22,7 +22,7 @@ public class MovingDownState implements WordPickerState {
             Greenfoot.delay(1);
             wordPicker.setLocation(wordPicker.getX(), wordPicker.getYAxis());
             wordPicker.setWordPickerState(wordPicker.getWordPickerIntersectingWordState());
-            wordPicker.isIntersectingWord();
+            wordPicker.intersectingWord();
         }
         else
         {
@@ -32,7 +32,7 @@ public class MovingDownState implements WordPickerState {
         }
     }
 
-    public void isIntersectingWord()
+    public void intersectingWord()
     {
         System.out.println("Cannot intersect word while moving in down state");
     }

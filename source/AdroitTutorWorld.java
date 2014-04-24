@@ -72,7 +72,7 @@ public class AdroitTutorWorld extends World implements OnOptionSelectedListener,
         List<Option> optionList = getObjects(Option.class);
         removeObjects(optionList);
         
-        currentLevel = LevelSetFactory.createLevel(option.getOptionText());
+        currentLevel = LevelFactory.createLevel(option.getOptionText());
         
         gameEngine = GameEngine.getInstance(this);
         gameEngine.initialize();

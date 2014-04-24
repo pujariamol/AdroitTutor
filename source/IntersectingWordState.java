@@ -16,7 +16,7 @@ public class IntersectingWordState implements WordPickerState {
 
     }
 
-    public void isIntersectingWord() {
+    public void intersectingWord() {
         Option answerOption = (Option)wordPicker.getIntersectingWord();
         if(answerOption != null)
         {

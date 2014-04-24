@@ -6,5 +6,5 @@ comment1.target=void\ moveUp(Option)
 comment2.params=
 comment2.target=void\ moveDown()
 comment3.params=
-comment3.target=void\ isIntersectingWord()
+comment3.target=void\ intersectingWord()
 numComments=4
