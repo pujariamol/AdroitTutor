@@ -29,8 +29,8 @@ public class GameOverScreen extends Screen
     
     private void showGameOverScreen(){
        this.adroitTutorWorld.removeObjects(this.adroitTutorWorld.getObjects(null));
-       GreenfootImage greenfootImage = new GreenfootImage("./images/GameOver.jpeg");
-       greenfootImage.scale(1100,600);
+       GreenfootImage greenfootImage = new GreenfootImage("./images/GameOver.png");
+       greenfootImage.scale(990,610);
        this.adroitTutorWorld.setBackground(greenfootImage);
        Greenfoot.delay(125);
        this.adroitTutorWorld.setBackground("./images/largeTransparent.gif");

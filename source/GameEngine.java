@@ -111,7 +111,7 @@ public class GameEngine implements Observer
         Option incorrectAnswer = new Option("Correct","./images/IncorrectAnswer.png");
         Option correctAnswer = new Option(questionSetIterator.currentQuestion().getCorrectAnswer());
         this.adroitTutorWorld.addObject(incorrectAnswer, 500, 250);
-        this.adroitTutorWorld.addObject(correctAnswer, 510, 300);
+        this.adroitTutorWorld.addObject(correctAnswer, 500, 300);
         
         Greenfoot.delay(125);
         this.adroitTutorWorld.removeObject(incorrectAnswer);

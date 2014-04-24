@@ -35,7 +35,7 @@ public class AdroitTutorWorld extends World implements OnOptionSelectedListener,
     private void prepare()
     {
         final WelcomeScreen screen1 = new WelcomeScreen();
-        GreenfootImage welcomeBackground = new GreenfootImage("./images/GrassTexture.png");
+        GreenfootImage welcomeBackground = new GreenfootImage("./images/WelcomeScreen.png");
         welcomeBackground.scale(1020, 640);
         screen1.setImage(welcomeBackground);
         
