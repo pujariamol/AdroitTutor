@@ -40,7 +40,7 @@ public class GameEngine implements Observer
         System.out.println("In update method of GameEngine");
         
         // call to evaluate answer function
-        String selectedAnswerOption = wordPicker.getPickedWord().getOptionText();
+        String selectedAnswerOption = wordPicker.getPickedAnswerOption().getOptionText();
         System.out.println("User Picked Word::" + selectedAnswerOption);
         evaluateAnswer(selectedAnswerOption);
         
