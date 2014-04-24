@@ -3,12 +3,6 @@ import java.awt.Color;
 import java.awt.Font;  
 import java.util.List;
 
-/**
- * Write a description of class Option here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
 public class Option extends Actor
 {
     private String optionText;
@@ -20,15 +14,22 @@ public class Option extends Actor
     public Option(String optionText)
     {
         this.optionText = optionText;
-        GreenfootImage img = new GreenfootImage(optionText, 25, Color.BLACK, new Color(0,0,0,0));
+        GreenfootImage img = new GreenfootImage(optionText, 40, Color.BLACK, new Color(0,0,0,0));
+        img.drawString(optionText, 200, 300);
         setImage(img);
     }
     
+    public Option(String optionText, String imgPath)
+    {
+        this.optionText = optionText;
+        GreenfootImage img = new GreenfootImage(imgPath);
+        setImage(img);
+    }
+   
     public void act() 
     {
         if(Greenfoot.mouseClicked(this) && optionSelectedListener != null)
         {
-            //System.out.println(optionText + " clicked");
             optionSelectedListener.onOptionSelected(this);
         }
     }

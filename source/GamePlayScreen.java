@@ -35,11 +35,10 @@ public class GamePlayScreen extends Screen
     
     private void showGamePlayScreen()
     {
-        System.out.println("Game Play Screen");
+        GreenfootImage levelScreenBackground = new GreenfootImage("./images/GamePlayScreen.png");
+        levelScreenBackground.scale(1000, 610);
+        this.adroitTutorWorld.setBackground(levelScreenBackground);
         
-        GreenfootImage greenfootImage = new GreenfootImage("./images/game_screen_bg.png");
-        this.adroitTutorWorld.setBackground(greenfootImage);
-       
         this.question = this.adroitTutorWorld.getGameEngine().getQuestionSetIterator().currentQuestion();
         
         showTools();
@@ -51,22 +50,20 @@ public class GamePlayScreen extends Screen
     
     private void showScoreBoard(){
         ScoreBoard scoreBoard = new ScoreBoard();
-        this.adroitTutorWorld.addObject(scoreBoard, 980, 500);
+        this.adroitTutorWorld.addObject(scoreBoard, 900, 546);
     }
     
     private void showQuestions(){
-System.out.println("---------------------Inside show questions");
         if(questionActor == null){
             questionActor = new QuestionActor(this.question);
         }
         questionActor.displayQuestion(this.question);
         this.adroitTutorWorld.setQuestionActor(questionActor);
-        this.adroitTutorWorld.addObject(questionActor,1080,300);      
+        this.adroitTutorWorld.addObject(questionActor,550,400);      
     }
     
     private void showOptions(){
         List<String> answerOptions= this.question.getAnswerOptions();
-        System.out.println("---------------------Inside show options");
         for(int i=0; i < answerOptions.size(); i++)
         {
             Option answerOption = new Option(answerOptions.get(i));
@@ -99,5 +96,4 @@ System.out.println("---------------------Inside show questions");
         clearOptions();
         showOptions();
     }
-    
 }

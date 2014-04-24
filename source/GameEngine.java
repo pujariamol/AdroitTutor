@@ -1,3 +1,5 @@
+import greenfoot.*;
+
 public class GameEngine implements Observer
 {
     private static GameEngine instance=null;
@@ -42,6 +44,7 @@ public class GameEngine implements Observer
         System.out.println("User Picked Word::" + selectedAnswerOption);
         evaluateAnswer(selectedAnswerOption);
         
+        
         // display next question
         if(!isGameOver)
         {
@@ -66,6 +69,7 @@ public class GameEngine implements Observer
         if(answer)  // correct answer
         {
             correctAnswer();
+            
         }
         else       // wrong answer 
         {
@@ -84,6 +88,11 @@ public class GameEngine implements Observer
     {
         int currentScore = player.getScore();
         
+        Option correctAnswer = new Option("Correct","./images/CorrectAnswer.png");
+        this.adroitTutorWorld.addObject(correctAnswer, 500, 250);
+        Greenfoot.delay(125);
+        this.adroitTutorWorld.removeObject(correctAnswer);
+        
         if(((currentScore+1) % 5)==0 || (((currentScore+1) % 8)==0) || (((currentScore+1) % 10)==0))
         {
             player.addReward(new Reward());
@@ -98,6 +107,15 @@ public class GameEngine implements Observer
     public void wrongAnswer()
     {
         int currentScore = player.getScore();
+        
+        Option incorrectAnswer = new Option("Correct","./images/IncorrectAnswer.png");
+        Option correctAnswer = new Option(questionSetIterator.currentQuestion().getCorrectAnswer());
+        this.adroitTutorWorld.addObject(incorrectAnswer, 500, 250);
+        this.adroitTutorWorld.addObject(correctAnswer, 510, 300);
+        
+        Greenfoot.delay(125);
+        this.adroitTutorWorld.removeObject(incorrectAnswer);
+        this.adroitTutorWorld.removeObject(correctAnswer);        
         
         player.decretementLife();
         player.setScore(currentScore);

@@ -1,4 +1,4 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import greenfoot.*;
 import java.util.List;
 
 public class AdroitTutorWorld extends World implements OnOptionSelectedListener,Observer
@@ -17,14 +17,13 @@ public class AdroitTutorWorld extends World implements OnOptionSelectedListener,
     IScreenHandler rewardScreen = new RewardScreen(this);
     IScreenHandler gameOverScreen = new GameOverScreen(this);
     
-    
     /**
      * Constructor for objects of class AdroitTutorWorld.
      */
     public AdroitTutorWorld()
     {    
         // Create a new world with 600x400  cells with a cell size of 1x1 pixels.
-        super(1100, 600, 1);
+        super(990, 610, 1);
         
         prepare();
     }
@@ -36,7 +35,9 @@ public class AdroitTutorWorld extends World implements OnOptionSelectedListener,
     private void prepare()
     {
         final WelcomeScreen screen1 = new WelcomeScreen();
-        
+        GreenfootImage welcomeBackground = new GreenfootImage("./images/GrassTexture.png");
+        welcomeBackground.scale(1020, 640);
+        screen1.setImage(welcomeBackground);
         
         levelScreen.setNextScreen(gamePlayScreen);
         gamePlayScreen.setNextScreen(rewardScreen);
@@ -64,17 +65,7 @@ public class AdroitTutorWorld extends World implements OnOptionSelectedListener,
             }
         }).start();
     }
-    
- /*   public void initilize()
-    {
-        player = Player.getInstance();
-        wordPicker = WordPicker.getInstance();
-        wordpickermover = WordPickerMover.getInstance();
-        currentLevel = null;
-        gameEngine = null;
-        questionActor = null;
-    }
-*/       
+
     public void onOptionSelected(Option option)
     {
         System.out.println("Inside world option selected --> " + option.getOptionText());
@@ -94,7 +85,6 @@ public class AdroitTutorWorld extends World implements OnOptionSelectedListener,
         {
              currentLevel = new DifficultLevel();
         }
-        //gameEngine = new GameEngine(this);
         gameEngine = GameEngine.getInstance(this);
         gameEngine.initialize();
         levelScreen.showScreen(ScreenType.GAMEPLAY);
@@ -110,6 +100,7 @@ public class AdroitTutorWorld extends World implements OnOptionSelectedListener,
     public void update()
     {
         System.out.println("In update call of AdroitTutorWorld Observer..");
+    
         // remove user selected word from World
         this.removeObject(wordPicker.getPickedWord());
         System.out.println("Picked word removed from world");

@@ -18,7 +18,6 @@ public class LevelScreen extends Screen
         if(screenType == ScreenType.LEVEL){
             showLevelScreen();
         }else if(this.nextScreen != null){
-            System.out.println("Level Screen to next Screen ");            
             this.nextScreen.showScreen(screenType);
         }
     }
@@ -29,11 +28,14 @@ public class LevelScreen extends Screen
     
     private void showLevelScreen()
     {
-        System.out.println("Display level screen");
+        GreenfootImage levelScreenBackground = new GreenfootImage("./images/GrassTexture.png");
+        levelScreenBackground.scale(1020, 640);
+        this.adroitTutorWorld.setBackground(levelScreenBackground);
+        
         for(int i=0;i < Level.Difficulty.values().length;i++)
         {
-            Option option = new Option(Level.Difficulty.values()[i].toString());
-            this.adroitTutorWorld.addObject(option, 500, 100 + (i * 200));
+            Option option = new Option(Level.Difficulty.values()[i].toString(),("./images/"+Level.Difficulty.values()[i].toString()+"Option.png"));
+            this.adroitTutorWorld.addObject(option, 500, 250 + (i * 100));
             option.setOptionSelectedListener(this.adroitTutorWorld);
         }
     }

@@ -10,6 +10,7 @@ public class ScoreBoard extends Actor implements Observer
     public ScoreBoard()
     {
         background = getImage();
+        this.setImage("./images/scoreboard.png");
         player = AdroitTutorWorld.getPlayer();
         player.attach(this);
         displayScore();
@@ -74,7 +75,7 @@ public class ScoreBoard extends Actor implements Observer
         displayLives(image);
         displayRewards(image);
                         
-        image.scale(220,150);               
+        image.scale(180,130);               
         setImage(image);
     }
     
