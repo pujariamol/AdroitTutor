@@ -1,19 +1,20 @@
 
 public class IntersectingWordState implements WordPickerState {
     private WordPicker wordPicker;
-    private static final int MAX_BOTTOM = 500;
     
     public IntersectingWordState(WordPicker wordPicker)
     {
         this.wordPicker = wordPicker;
     }
 
-    public void moveUp(Option word) {
-
+    public void moveUp(Option word)
+    {
+        System.out.println("Cannot move word picker up in IntersectingWordState");
     }
 
-    public void moveDown() {
-
+    public void moveDown()
+    {
+        System.out.println("Cannot move word picker down in IntersectingWordState");
     }
 
     public void intersectingWord() {

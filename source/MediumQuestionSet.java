@@ -19,17 +19,11 @@ public class MediumQuestionSet extends QuestionSet
         }
     }
     
-    public void act() 
-    {
-        // Add your action code here.
-    } 
-    
     public void setQuestionSet()
     {
         try
         {
             BufferedReader reader = new BufferedReader(new FileReader("./questionset/MediumSet.txt"));
-//            C:\Users\prasad\Desktop\Courses\CMPE 202\CMPE202\source\questionset
             String line = null,QueStr[];
             int i=0;
             java.util.List<String> answerOptionsList = new java.util.ArrayList<String>();

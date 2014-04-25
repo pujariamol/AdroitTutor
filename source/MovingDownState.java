@@ -11,22 +11,20 @@ public class MovingDownState implements WordPickerState {
 
     public void moveUp(Option word)
     {
-        System.out.println("Cannot move word picker up in down state");
+        System.out.println("Cannot move word picker up in MovingDownState");
     }
 
     public void moveDown()
     {
         if(Greenfoot.isKeyDown("down"))
         {
-            wordPicker.setYAxis(wordPicker.getYAxis() + MOVE_INTERVAL);
             Greenfoot.delay(1);
-            wordPicker.setLocation(wordPicker.getX(), wordPicker.getYAxis());
+            wordPicker.movePickerDown();
             wordPicker.setWordPickerState(wordPicker.getWordPickerIntersectingWordState());
             wordPicker.intersectingWord();
         }
         else
         {
-            //System.out.println("Down key released");
             wordPicker.setWordPickerState(wordPicker.getWordPickerMovingUpState());
             wordPicker.moveUp(null);
         }
@@ -34,7 +32,7 @@ public class MovingDownState implements WordPickerState {
 
     public void intersectingWord()
     {
-        System.out.println("Cannot intersect word while moving in down state");
+        System.out.println("Cannot intersect word in MovingDownState");
     }
 
 }

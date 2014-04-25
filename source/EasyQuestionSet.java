@@ -16,12 +16,7 @@ public class EasyQuestionSet extends QuestionSet
         {
             e.printStackTrace();
         }
-    }
-    
-    public void act() 
-    {
-        // Add your action code here.
-    }    
+    }   
     
     public void setQuestionSet()
     {

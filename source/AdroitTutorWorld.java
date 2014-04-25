@@ -3,28 +3,26 @@ import java.util.List;
 
 public class AdroitTutorWorld extends World implements OnOptionSelectedListener,Observer
 {
-    static Player player = Player.getInstance();
-    WordPicker wordPicker = WordPicker.getInstance();
-    WordPickerMover wordpickermover = WordPickerMover.getInstance();
-    Level currentLevel = null;
-    GameEngine gameEngine = null;
-    QuestionActor questionActor = null;
-    
-    static final int WELCOME_SCREEN_TIMEOUT = 2000;
+    private static Player player = Player.getInstance();
+    private WordPicker wordPicker = WordPicker.getInstance();
 
-    IScreenHandler levelScreen = new LevelScreen(this);
-    IScreenHandler gamePlayScreen = new GamePlayScreen(this);
-    IScreenHandler levelCompleteScreen = new LevelCompleteScreen(this);
-    IScreenHandler gameOverScreen = new GameOverScreen(this);
+    private Level currentLevel = null;
+    private GameEngine gameEngine = null;
+    private QuestionActor questionActor = null;
+    
+    private static final int WELCOME_SCREEN_TIMEOUT = 2000;
+
+    private IScreenHandler levelScreen = new LevelScreen(this);
+    private IScreenHandler gamePlayScreen = new GamePlayScreen(this);
+    private IScreenHandler levelCompleteScreen = new LevelCompleteScreen(this);
+    private IScreenHandler gameOverScreen = new GameOverScreen(this);
     
     /**
      * Constructor for objects of class AdroitTutorWorld.
      */
     public AdroitTutorWorld()
     {    
-        // Create a new world with 600x400  cells with a cell size of 1x1 pixels.
         super(990, 610, 1);
-        
         prepare();
     }
     
@@ -105,11 +103,6 @@ public class AdroitTutorWorld extends World implements OnOptionSelectedListener,
         return wordPicker;
     }
     
-    public WordPickerMover getWordPickerMover()
-    {
-        return wordpickermover;
-    }
-    
     public Level getCurrentLevel()
     {
         return currentLevel;
@@ -143,7 +136,6 @@ public class AdroitTutorWorld extends World implements OnOptionSelectedListener,
         player.reset();
         player = Player.getInstance();
         wordPicker = WordPicker.getInstance();
-        wordpickermover = WordPickerMover.getInstance();
         currentLevel = null;
         gameEngine = null;
         questionActor = null;

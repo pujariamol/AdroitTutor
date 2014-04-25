@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.params=world
+comment0.target=LevelCompleteScreen(AdroitTutorWorld)
+comment1.params=screenType
+comment1.target=void\ showScreen(ScreenType)
+comment2.params=nextScreen
+comment2.target=void\ setNextScreen(IScreenHandler)
+comment3.params=
+comment3.target=void\ showLevelCompleteScreen()
+numComments=4

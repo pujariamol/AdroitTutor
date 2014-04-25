@@ -2,9 +2,7 @@
 comment0.params=
 comment0.target=MediumQuestionSet()
 comment1.params=
-comment1.target=void\ act()
-comment2.params=
-comment2.target=void\ setQuestionSet()
-comment3.params=q
-comment3.target=void\ displayQuestion(Question)
-numComments=4
+comment1.target=void\ setQuestionSet()
+comment2.params=q
+comment2.target=void\ displayQuestion(Question)
+numComments=3

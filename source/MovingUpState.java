@@ -10,10 +10,9 @@ public class MovingUpState implements WordPickerState {
 
     public void moveUp(Option word)
     {
-        while(wordPicker.getY() > MAX_TOP)
+        while(wordPicker.getY() > WordPicker.MAX_TOP)
         {
-            wordPicker.setYAxis(wordPicker.getYAxis() - MOVE_INTERVAL);
-            wordPicker.setLocation(wordPicker.getX(), wordPicker.getYAxis());
+            wordPicker.movePickerUp();
             if(word != null)
             {
                 word.setLocation(wordPicker.getX(), (wordPicker.getYAxis() + WORD_MOVE_INTERVAL));
@@ -29,12 +28,12 @@ public class MovingUpState implements WordPickerState {
 
     public void moveDown()
     {
-        System.out.println("Can't move down while picking up word");
+        System.out.println("Cannot move down in MovingUpState");
     }
 
     public void intersectingWord()
     {
-        System.out.println("Can't intersect while picking up word");
+        System.out.println("Cannot intersect word in MovingUpState");
     }
 
 }

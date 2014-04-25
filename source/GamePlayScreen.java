@@ -87,7 +87,7 @@ public class GamePlayScreen extends Screen
     }
     
     private void showTools(){
-        this.adroitTutorWorld.addObject(this.adroitTutorWorld.wordPicker, 530, 100);
+        this.adroitTutorWorld.addObject(this.adroitTutorWorld.getWordPicker(), 530, 100);
     }
     
     public void updateQuestion(Question question)
